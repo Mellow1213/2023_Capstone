@@ -7,3 +7,5 @@
 # 프로젝트 진행 사항
 
 
+### HeartRate/심박수 측정 앱/Android Studio
+### https://github.com/lbd0/HeartRate_WatchApp
