@@ -8,6 +8,9 @@ public class AnimateHandOnInput : MonoBehaviour
     public InputActionProperty gripAnimationAction;
 
     public Animator handAnimator;
+
+    public float triggerValue;
+    public float gripValue;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +20,11 @@ public class AnimateHandOnInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float triggerValue = pinchAnimationAction.action.ReadValue<float>();
+        //triggerValue = pinchAnimationAction.action.ReadValue<float>();
         handAnimator.SetFloat("Trigger", triggerValue);
         Debug.Log(triggerValue);
 
-        float gripValue = gripAnimationAction.action.ReadValue<float>();
+        //gripValue = gripAnimationAction.action.ReadValue<float>();
         handAnimator.SetFloat("Grip", gripValue);
     }
 }
