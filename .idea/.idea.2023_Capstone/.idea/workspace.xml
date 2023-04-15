@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1db58fa6-dd38-4712-9332-597a6543c734" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/02. Scripts/HandAnimation/AnimateHandOnInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Scripts/HandAnimation/AnimateHandOnInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01. Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/floppyHand.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/floppyHand.mat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/02. Scripts/HandAnimation/ShowControllers.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -34,6 +39,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/Desktop/Build_Test\ReConfiguation.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\GVE03\Desktop\Build_Test" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.17f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\GVE03\Github\2023_Capstone -debugCodeOptimization" />
@@ -81,7 +94,8 @@
       <updated>1680526981540</updated>
       <workItem from="1680526986112" duration="33000" />
       <workItem from="1681363740117" duration="2326000" />
-      <workItem from="1681543234372" duration="301000" />
+      <workItem from="1681543234372" duration="999000" />
+      <workItem from="1681548102376" duration="1014000" />
     </task>
     <servers />
   </component>
