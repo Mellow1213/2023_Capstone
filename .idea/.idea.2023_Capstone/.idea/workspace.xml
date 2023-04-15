@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1db58fa6-dd38-4712-9332-597a6543c734" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/01. Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02. Scripts/HandAnimation/AnimateHandOnInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Scripts/HandAnimation/AnimateHandOnInput.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +81,7 @@
       <updated>1680526981540</updated>
       <workItem from="1680526986112" duration="33000" />
       <workItem from="1681363740117" duration="2326000" />
+      <workItem from="1681543234372" duration="301000" />
     </task>
     <servers />
   </component>
