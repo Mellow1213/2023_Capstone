@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1db58fa6-dd38-4712-9332-597a6543c734" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01. Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/02. Scripts/Controller/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Scripts/Controller/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02. Scripts/Controller/PlayerController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Scripts/Controller/PlayerController.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +94,7 @@
       <workItem from="1681543234372" duration="999000" />
       <workItem from="1681548102376" duration="1014000" />
       <workItem from="1681551056848" duration="1877000" />
+      <workItem from="1681965573439" duration="359000" />
     </task>
     <servers />
   </component>
