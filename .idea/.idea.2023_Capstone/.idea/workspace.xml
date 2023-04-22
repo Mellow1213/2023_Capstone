@@ -4,13 +4,16 @@
     <list default="true" id="1db58fa6-dd38-4712-9332-597a6543c734" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01. Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02. Scripts/Controller/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Scripts/Controller/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Longbow/Materials/BalloonColor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Longbow/Materials/BalloonColor.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Resources/SteamVR_HoverHighlight_URP.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SteamVR/Resources/SteamVR_HoverHighlight_URP.mat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/Documents/카카오톡 받은 파일/DemoArduino.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SimpleAttach.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -96,6 +99,7 @@
       <workItem from="1681548102376" duration="1014000" />
       <workItem from="1681551056848" duration="1877000" />
       <workItem from="1681965573439" duration="3081000" />
+      <workItem from="1682146432955" duration="2061000" />
     </task>
     <servers />
   </component>
