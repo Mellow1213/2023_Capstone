@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1db58fa6-dd38-4712-9332-597a6543c734" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01. Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Resources/SteamVR_HoverHighlight_URP.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SteamVR/Resources/SteamVR_HoverHighlight_URP.mat" afterDir="false" />
-    </list>
+    <list default="true" id="1db58fa6-dd38-4712-9332-597a6543c734" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,6 +96,7 @@
       <workItem from="1681551056848" duration="1877000" />
       <workItem from="1681965573439" duration="3081000" />
       <workItem from="1682146432955" duration="2061000" />
+      <workItem from="1682324635901" duration="6000" />
     </task>
     <servers />
   </component>

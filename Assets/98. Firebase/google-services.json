@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "599237115166",
+    "firebase_url": "https://vrhythm-bb2ed-default-rtdb.firebaseio.com",
+    "project_id": "vrhythm-bb2ed",
+    "storage_bucket": "vrhythm-bb2ed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599237115166:android:178608a795eea0554ddd0f",
+        "android_client_info": {
+          "package_name": "com.VRhythm.Heartrate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599237115166-a78c5br66i3d04oa5acmvua6hs9jn46p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE2Mg-5d_160ahwK6BxrwQ_6E-yFK2r14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "599237115166-a78c5br66i3d04oa5acmvua6hs9jn46p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "599237115166-h3ddpf4m8q3raqeb998kcrhn6vk574fq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.VRhythm.Heartrate"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599237115166:android:bfaa95d79a38f3814ddd0f",
+        "android_client_info": {
+          "package_name": "kr.ac.hallym.heartrate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599237115166-a78c5br66i3d04oa5acmvua6hs9jn46p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE2Mg-5d_160ahwK6BxrwQ_6E-yFK2r14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "599237115166-a78c5br66i3d04oa5acmvua6hs9jn46p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "599237115166-h3ddpf4m8q3raqeb998kcrhn6vk574fq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.VRhythm.Heartrate"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
