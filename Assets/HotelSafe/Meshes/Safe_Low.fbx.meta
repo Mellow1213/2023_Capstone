@@ -1,0 +1,198 @@
+fileFormatVersion: 2
+guid: 121c8b30458782b41bed29b0936ac8f5
+timeCreated: 1518381369
+licenseType: Store
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: 0
+    100002: 1
+    100004: 2
+    100006: 3
+    100008: 4
+    100010: 5
+    100012: 6
+    100014: 7
+    100016: 8
+    100018: 9
+    100020: C
+    100022: Door
+    100024: Key
+    100026: //RootNode
+    100028: Clear
+    400000: 0
+    400002: 1
+    400004: 2
+    400006: 3
+    400008: 4
+    400010: 5
+    400012: 6
+    400014: 7
+    400016: 8
+    400018: 9
+    400020: C
+    400022: Door
+    400024: Key
+    400026: //RootNode
+    400028: Clear
+    2100000: No Name
+    2100002: SafeCaseMetal
+    2100004: WhitePlastic
+    2100006: LCDScreen
+    2100008: BoltMetal
+    2100010: OuterSafeMaterial
+    2300000: 0
+    2300002: 1
+    2300004: 2
+    2300006: 3
+    2300008: 4
+    2300010: 5
+    2300012: 6
+    2300014: 7
+    2300016: 8
+    2300018: 9
+    2300020: C
+    2300022: Door
+    2300024: Key
+    2300026: //RootNode
+    2300028: Clear
+    3300000: 0
+    3300002: 1
+    3300004: 2
+    3300006: 3
+    3300008: 4
+    3300010: 5
+    3300012: 6
+    3300014: 7
+    3300016: 8
+    3300018: 9
+    3300020: C
+    3300022: Door
+    3300024: Key
+    3300026: //RootNode
+    3300028: Clear
+    4300000: MainBody
+    4300002: Door
+    4300004: 1
+    4300006: 3
+    4300008: 4
+    4300010: 5
+    4300012: 6
+    4300014: 7
+    4300016: 8
+    4300018: 9
+    4300020: C
+    4300022: Key
+    4300024: 2
+    4300026: 0
+    4300028: Clear
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BoltMetal
+    second: {fileID: 2100000, guid: 8c9c70b7d2031fb499527514ef424a6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LCDScreen
+    second: {fileID: 2100000, guid: dbc9734b62847a2429bc97761234deb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: b6c30ef678cb19546932b2d3984de0c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OuterSafeMaterial
+    second: {fileID: 2100000, guid: 1b51e1d9187220f46a92398ba43b1251, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SafeCaseMetal
+    second: {fileID: 2100000, guid: ccc7dfb8bdc27144dbf0017bcddf828c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WhitePlastic
+    second: {fileID: 2100000, guid: 462a7a697e65f17419938c2455c0eb59, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

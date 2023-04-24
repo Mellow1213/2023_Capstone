@@ -1,0 +1,34 @@
+7-Segment fonts were sourced from: http://www.keshikan.net/fonts-e.html
+and is included under SIL Open Font License 1.1
+
+Full License text is here:
+
+https://github.com/keshikan/DSEG/blob/master/DSEG-LICENSE.txt
+
+and is included in the project.
+
+
+
+Safe opening sound was provided by KayKrusher, sourced from:
+https://freesound.org/people/KeyKrusher/sounds/172678/
+
+and is included under license:
+
+https://creativecommons.org/licenses/by/3.0/
+
+Minor modification was made to make it appropriate for use.
+
+
+
+Button beep sound was provided by KayKrusher, sourced from:
+https://freesound.org/people/KeyKrusher/sounds/154953/
+
+
+and is included under license:
+
+https://creativecommons.org/licenses/by/3.0/
+
+
+
+
+Please note that the sounds are provided under Attribution licenses so if you use them in your project please be sure to credit the authors.
