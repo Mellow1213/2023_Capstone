@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 77f7ac0088e88b7428d3870caee2080a
+timeCreated: 1513477086
+licenseType: Store
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: DSEG7 Classic
+  fontNames:
+  - DSEG7 Classic
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 63d51ff066da8e84eb2582a72b08b84c, type: 3}
+  - {fileID: 12800000, guid: 4b3a7d83c08d5144d9f212bc9ab190db, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
