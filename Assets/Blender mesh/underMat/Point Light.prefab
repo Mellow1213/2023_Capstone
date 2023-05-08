@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6695937199426912554}
   - component: {fileID: 8443236937510837865}
   - component: {fileID: 1721680348810019808}
+  - component: {fileID: 6805644146775459707}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,6 +117,19 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!65 &6805644146775459707
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562395774637128212}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 2, z: 8.6}
+  m_Center: {x: -2.2, y: -4.5, z: 0}
 --- !u!1 &5407183097705677744
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +144,7 @@ GameObject:
   - component: {fileID: 4643677305879663550}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
