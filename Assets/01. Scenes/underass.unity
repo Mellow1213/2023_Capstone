@@ -2426,7 +2426,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 548023108}
-  - component: {fileID: 548023107}
   m_Layer: 0
   m_Name: Lights
   m_TagString: Untagged
@@ -2434,18 +2433,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &548023107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 548023106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9fef6650b8cf0d42906a465d67a541e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &548023108
 Transform:
   m_ObjectHideFlags: 0
@@ -6897,7 +6884,7 @@ GameObject:
   - component: {fileID: 1789789394}
   - component: {fileID: 1789789399}
   m_Layer: 0
-  m_Name: ex
+  m_Name: Player ex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
