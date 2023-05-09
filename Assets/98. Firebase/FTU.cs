@@ -31,7 +31,12 @@ public class FTU : MonoBehaviour // Firebase to Unity
         {
             timer = 0;
             Debug.Log("출력");
-            BPM_TextMeshPro.text = bpmValues[0];
+            if(bpmValues[0] != "0.0")
+                BPM_TextMeshPro.text = "BPM : " + bpmValues[0];
+            else
+            {
+                Debug.Log("0으로 측정 중. 이전 값을 출력합니다");
+            }
         }
     }
 
