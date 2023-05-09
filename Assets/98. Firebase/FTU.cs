@@ -13,17 +13,9 @@ public class FTU : MonoBehaviour // Firebase to Unity
     {
         // 데이터베이스의 루트 참조 위치 가져옴
         database = FirebaseDatabase.DefaultInstance.RootReference;
+        database.ValueChanged += HandleValueChanged;    // 데이터가 변경될 때마다 읽음
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))    // 왼쪽 마우스 클릭 시
-        {
-            database.ValueChanged += HandleValueChanged;    // 데이터가 변경될 때마다 읽음
-        }
-    }
-
+    
     void HandleValueChanged(object sender, ValueChangedEventArgs args)
     {
         if(args.DatabaseError != null) 

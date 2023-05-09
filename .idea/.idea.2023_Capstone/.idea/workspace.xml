@@ -4,7 +4,6 @@
     <list default="true" id="1db58fa6-dd38-4712-9332-597a6543c734" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/98. Firebase/FTU.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/98. Firebase/FTU.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +100,8 @@
       <workItem from="1681965573439" duration="3081000" />
       <workItem from="1682146432955" duration="2061000" />
       <workItem from="1682324635901" duration="6000" />
-      <workItem from="1683514262544" duration="1816000" />
+      <workItem from="1683514262544" duration="1826000" />
+      <workItem from="1683607322037" duration="1709000" />
     </task>
     <servers />
   </component>
