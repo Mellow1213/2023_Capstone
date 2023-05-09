@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class Security : MonoBehaviour
 {
-    private bool isMoving = false;
     private int i = 0;
     public GameObject[] patrols;
+
+    public GameObject player;
+    private lockerOpen LO;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        LO = player.GetComponent<lockerOpen>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isMoving)
+        if (LO.DoorEventTrue)
         {
-
+            StartCoroutine(activeSecuity());
         }
         else
         {
@@ -31,5 +34,12 @@ public class Security : MonoBehaviour
             this.transform.Rotate(0, 180, 0);
             i++;
         }
+    }
+    IEnumerator activeSecuity()
+    {
+        this.transform.GetChild(0).gameObject.SetActive(false);
+        yield return new WaitForSeconds(6);
+        this.transform.GetChild(0).gameObject.SetActive(true);
+
     }
 }

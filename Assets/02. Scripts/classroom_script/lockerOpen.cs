@@ -58,7 +58,7 @@ public class lockerOpen : MonoBehaviour
     {
         isTriggered = Input.GetMouseButton(0);
         isTriggered2 = Input.GetMouseButton(1);
-        audioSource.Play();
+        //audioSource.Play();
 
         if (isTriggered || isTriggered2)
         {
@@ -69,7 +69,6 @@ public class lockerOpen : MonoBehaviour
                 //문두들기는 소리, 애니메이션 실행
                 DoorEventTrue = true;
                 Gauge = 0.3f;
-                DoorEventTrue = false;
             }
         }
         else
