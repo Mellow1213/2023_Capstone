@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4000012469850966}
   - component: {fileID: 114000013071118052}
   m_Layer: 0
-  m_Name: LeftRenderModel
+  m_Name: LeftRenderModel Slim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1723825286266364145}
+  - {fileID: 4555999972962913791}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45,12 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 847a4fd831847974bb8d16b469b643e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handPrefab: {fileID: 1000013597184258, guid: 057574477c20401448aba7c848873712, type: 3}
+  handPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf, type: 3}
   displayHandByDefault: 1
   controllerPrefab: {fileID: 1000011460529826, guid: e789c2cc0c98a4c4198a4033fb8ccf96,
     type: 3}
   displayControllerByDefault: 0
---- !u!1001 &4365158329675947839
+--- !u!1001 &1459800144755487281
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -169,9 +169,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efe071b8c6edab4f957efbf80977a9c, type: 3}
---- !u!224 &1723825286266364145 stripped
+--- !u!224 &4555999972962913791 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3132369717521694670, guid: 6efe071b8c6edab4f957efbf80977a9c,
     type: 3}
-  m_PrefabInstance: {fileID: 4365158329675947839}
+  m_PrefabInstance: {fileID: 1459800144755487281}
   m_PrefabAsset: {fileID: 0}
