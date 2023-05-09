@@ -11,16 +11,16 @@ public class FTU : MonoBehaviour // Firebase to Unity
     // Start is called before the first frame update
     void Start()
     {
-        // µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ·çÆ® ÂüÁ¶ À§Ä¡ °¡Á®¿È
+        // ë°ì´í„°ë² ì´ìŠ¤ì˜ ë£¨íŠ¸ ì°¸ì¡° ìœ„ì¹˜ ê°€ì ¸ì˜´
         database = FirebaseDatabase.DefaultInstance.RootReference;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))    // ¿ŞÂÊ ¸¶¿ì½º Å¬¸¯ ½Ã
+        if (Input.GetMouseButtonDown(0))    // ì™¼ìª½ ë§ˆìš°ìŠ¤ í´ë¦­ ì‹œ
         {
-            database.ValueChanged += HandleValueChanged;    // µ¥ÀÌÅÍ°¡ º¯°æµÉ ¶§¸¶´Ù ÀĞÀ½
+            database.ValueChanged += HandleValueChanged;    // ë°ì´í„°ê°€ ë³€ê²½ë  ë•Œë§ˆë‹¤ ì½ìŒ
         }
     }
 
@@ -28,9 +28,9 @@ public class FTU : MonoBehaviour // Firebase to Unity
     {
         if(args.DatabaseError != null) 
         {
-            Debug.Log(args.DatabaseError.Message); // ¿¡·¯ ¸Ş¼¼Áö
+            Debug.Log(args.DatabaseError.Message); // ì—ëŸ¬ ë©”ì„¸ì§€
             return;
         }
-        Debug.Log(args.Snapshot.Child("bpm").Value); // bpm¿¡ ÀÖ´Â µ¥ÀÌÅÍ ·Î±× ÂïÀ½
+        Debug.Log(args.Snapshot.Child("bpm").Value); // bpmì— ìˆëŠ” ë°ì´í„° ë¡œê·¸ ì°ìŒ
     }
 }
