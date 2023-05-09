@@ -4,22 +4,12 @@ using UnityEngine;
 
 public class LightOff : MonoBehaviour
 {
-    void Start()
-    {
- 
-    }
-
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Light"))
+        if (other.gameObject.CompareTag("Light"))//ºÒ²¨Áü
         {
             Destroy(other.gameObject);
-        }else if (other.gameObject.CompareTag("Light2"))
+        }else if (other.gameObject.CompareTag("Light2"))//ºÒÀÌ ¿ªÀ¸·Î ÄÑÁü
         {
             Transform t = other.gameObject.GetComponentInChildren<Transform>(true);
             t.GetChild(0).gameObject.SetActive(true);

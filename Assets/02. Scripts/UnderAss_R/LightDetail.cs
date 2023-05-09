@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class LightDetail : MonoBehaviour
 {
-    //public GameObject illusion;
+    //불 깜박이는 스크립트. 블로그에서 가져옴.
+    //public GameObject illusion; //깜박거릴 때 나타면 좋은 유령??
     private Light theLight;
     private float targetIntensity;
     private float currentIntensity;
