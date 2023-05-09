@@ -6,6 +6,8 @@ using UnityEngine.Experimental.GlobalIllumination;
 
 public class lockerOpen : MonoBehaviour
 {
+    //사물함 여는 속도에 따라서 소리 사이즈 변경되는 script
+    //일정 속도(소리 크기)를 넘으면 경비가 문두들김.
     private Vector3 ScreenCenter;
     private bool isTriggered = false;
     private bool isTriggered2 = false;
@@ -19,12 +21,13 @@ public class lockerOpen : MonoBehaviour
     public AudioClip doorSound;
     private AudioSource audioSource;
 
-    //Angular Velocity
+    //Angular Velocity, 블로그 참고
     Quaternion previousRotation; //전 프레임의 로테이션 값
     Vector3 angularVelocity; //각속도를 관리할 변수
     Vector3 speed;
 
-    //이 함수를 업데이트에서 굴려줍니다.
+    public bool DoorEventTrue = false;
+
     public Vector3 GetPedestrianAngularVelocity()
     {
         Quaternion deltaRotation = ob.transform.rotation * Quaternion.Inverse(previousRotation);
@@ -61,6 +64,13 @@ public class lockerOpen : MonoBehaviour
         {
             speed = GetPedestrianAngularVelocity();
             Gauge += Time.deltaTime * speed.magnitude;
+            if(Gauge > 0.7)
+            {
+                //문두들기는 소리, 애니메이션 실행
+                DoorEventTrue = true;
+                Gauge = 0.3f;
+                DoorEventTrue = false;
+            }
         }
         else
         {
@@ -100,11 +110,13 @@ public class lockerOpen : MonoBehaviour
             if(isTriggered)
             {
                 GaugeTimer = -1 * Time.deltaTime * 20;
+                audioSource.volume = Gauge;
                 if (ob.transform.eulerAngles.y >= 170) ob.transform.Rotate(0, GaugeTimer, 0);
             }
             if (isTriggered2)
             {
                 GaugeTimer = Time.deltaTime * 10;
+                audioSource.volume = Gauge;
                 ob.transform.Rotate(0, GaugeTimer, 0);
                 if (ob.transform.eulerAngles.y >= 270f) ob.transform.rotation = Quaternion.Euler(0, 270, 0);
             }
