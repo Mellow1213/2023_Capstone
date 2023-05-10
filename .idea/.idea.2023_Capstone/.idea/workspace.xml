@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1db58fa6-dd38-4712-9332-597a6543c734" name="Changes" comment="" />
+    <list default="true" id="1db58fa6-dd38-4712-9332-597a6543c734" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01. Scenes/Debugging_Map.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scenes/Debugging_Map.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/98. Firebase/FTU.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/98. Firebase/FTU.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Core/Prefabs/RightRenderModel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Core/Prefabs/RightRenderModel.prefab" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/Documents/카카오톡 받은 파일/DemoArduino.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/02. Scripts/BPM/BpmManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SimpleAttach.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../My project (3)/Assets/DemoArduino.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -97,6 +103,8 @@
       <workItem from="1681965573439" duration="3081000" />
       <workItem from="1682146432955" duration="2061000" />
       <workItem from="1682324635901" duration="6000" />
+      <workItem from="1683514262544" duration="1826000" />
+      <workItem from="1683607322037" duration="5029000" />
     </task>
     <servers />
   </component>
