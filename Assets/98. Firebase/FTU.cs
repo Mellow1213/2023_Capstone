@@ -8,9 +8,7 @@ using Firebase.Database;
 
 public class FTU : MonoBehaviour // Firebase to Unity
 {
-    private DatabaseReference database;
-
-    private string bpm;
+    private DatabaseReference database; // 데이터베이스
 
     // Start is called before the first frame update
     void Start()
