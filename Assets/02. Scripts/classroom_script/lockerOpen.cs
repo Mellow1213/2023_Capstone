@@ -8,15 +8,13 @@ public class lockerOpen : MonoBehaviour
 {
     //사물함 여는 속도에 따라서 소리 사이즈 변경되는 script
     //일정 속도(소리 크기)를 넘으면 경비가 문두들김.
-    private Vector3 ScreenCenter;
     private bool isTriggered = false;
     private bool isTriggered2 = false;
     private float GaugeTimer;
     
     private float Gauge = 0.3f;
 
-    public LayerMask myLayer;
-    public GameObject ob;
+    public GameObject ob;//원래는 hit을 사용해서 닿는 object를 감지했는데, 번거로워서 테스트용으로 움직일 사물함 문을 임의로 설정함.
 
     public AudioClip doorSound;
     private AudioSource audioSource;
@@ -28,7 +26,7 @@ public class lockerOpen : MonoBehaviour
 
     public bool DoorEventTrue = false;
 
-    public Vector3 GetPedestrianAngularVelocity()
+    public Vector3 GetPedestrianAngularVelocity()//각 속도를 구하는 함수
     {
         Quaternion deltaRotation = ob.transform.rotation * Quaternion.Inverse(previousRotation);
 
@@ -48,7 +46,6 @@ public class lockerOpen : MonoBehaviour
     void Start()
     {
         audioSource = this.GetComponent<AudioSource>();
-        ScreenCenter = new Vector3(Camera.main.pixelWidth/2, Camera.main.pixelHeight/2);
         audioSource.clip = doorSound;
         audioSource.loop = true;
     }
@@ -56,14 +53,14 @@ public class lockerOpen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isTriggered = Input.GetMouseButton(0);
-        isTriggered2 = Input.GetMouseButton(1);
+        isTriggered = Input.GetMouseButton(0);//문 열기 위해서 임시로 사용
+        isTriggered2 = Input.GetMouseButton(1);//문을 닫기 위해서 임시로 사용
         //audioSource.Play();
 
         if (isTriggered || isTriggered2)
         {
             speed = GetPedestrianAngularVelocity();
-            Gauge += Time.deltaTime * speed.magnitude;
+            Gauge += Time.deltaTime * speed.magnitude; //각속도가 곧 사운드(소음) 크기
             if(Gauge > 0.7)
             {
                 //문두들기는 소리, 애니메이션 실행
@@ -99,27 +96,5 @@ public class lockerOpen : MonoBehaviour
         {
             GaugeTimer = 0;
         }
-
-        /*
-        Ray ray = Camera.main.ScreenPointToRay(ScreenCenter);
-        RaycastHit hit;
-        if(Physics.Raycast(ray, out hit, 100.0f, myLayer))
-        {
-            GameObject ob = hit.transform.gameObject;
-            if(isTriggered)
-            {
-                GaugeTimer = -1 * Time.deltaTime * 20;
-                audioSource.volume = Gauge;
-                if (ob.transform.eulerAngles.y >= 170) ob.transform.Rotate(0, GaugeTimer, 0);
-            }
-            if (isTriggered2)
-            {
-                GaugeTimer = Time.deltaTime * 10;
-                audioSource.volume = Gauge;
-                ob.transform.Rotate(0, GaugeTimer, 0);
-                if (ob.transform.eulerAngles.y >= 270f) ob.transform.rotation = Quaternion.Euler(0, 270, 0);
-            }
-        }
-         */
     }
 }

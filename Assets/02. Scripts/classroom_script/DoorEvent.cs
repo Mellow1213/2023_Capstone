@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorEvent : MonoBehaviour
-{
+{//일정 소음이 넘으면 돌아다니던 경비가 사라지고 문을 열려고 벌컥 거리는 이벤트. 5초간 진행
     private int num;
     private Animator anim;
     public GameObject[] doors;
+    public GameObject[] monster;
+
     public GameObject player;
     private lockerOpen LO;
 
@@ -19,7 +21,7 @@ public class DoorEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (LO.DoorEventTrue)
+        if (LO.DoorEventTrue)//일정 소음이 넘으면 문이 달그락 거리는 이벤트
         {
             num = Random.Range(1, 4);
             Debug.Log(num);
@@ -41,11 +43,10 @@ public class DoorEvent : MonoBehaviour
             }
         }
     }
-    IEnumerator activeMonster(int i)
+    IEnumerator activeMonster(int i)//문 앞에 서있는 몬스터
     {
-        doors[i].transform.GetChild(0).gameObject.SetActive(true);
+        monster[i].SetActive(true);
         yield return new WaitForSeconds(6);
-        doors[i].transform.GetChild(0).gameObject.SetActive(false);
-
+        monster[i].SetActive(false);
     }
 }

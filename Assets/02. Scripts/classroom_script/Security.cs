@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Security : MonoBehaviour
 {
+    //경비가 돌아다니는 기능
     private int i = 0;
     public GameObject[] patrols;
 
@@ -35,7 +36,7 @@ public class Security : MonoBehaviour
             i++;
         }
     }
-    IEnumerator activeSecuity()
+    IEnumerator activeSecuity()//일정 소음이 넘으면 불빛(손전등 역할)이 잠시 꺼짐
     {
         this.transform.GetChild(0).gameObject.SetActive(false);
         yield return new WaitForSeconds(6);
