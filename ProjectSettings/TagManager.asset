@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Light
   - Light2
+  - buttons
+  - Down
   layers:
   - Default
   - TransparentFX
