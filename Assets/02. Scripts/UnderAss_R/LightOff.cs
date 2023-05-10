@@ -4,32 +4,16 @@ using UnityEngine;
 
 public class LightOff : MonoBehaviour
 {
-    private GameObject[] lights;//Light must be tagged as "Light"
-    public GameObject player;
-    private float distance = 0.0f;
-    private int i = 0;
-    private float dis = 3.1f;
-
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        lights = GameObject.FindGameObjectsWithTag("Light");
-    }
-
-    void Update()
-    {
-        distance = Vector3.Distance(lights[i].transform.position, player.transform.position);//Lighting and player distance (calculated distance based on lighting)
-        //Debug.Log(distance);
-        Vector3 dir = player.transform.position - lights[i].transform.position;
-        //Debug.Log(dir);
-        if (distance >= dis && dir.x > -1)//Using dir.x to prevent reverse values
-        //*important* If it does not work properly, the starting position of the competitor is far from the dis.
-        //The dis value should be calculated directly by looking at the distance between lights.
+        if (other.gameObject.CompareTag("Light"))//ºÒ²¨Áü
         {
-            lights[i].SetActive(false);//Disable lighting
-            if (i < lights.Length - 1)//Add i until less than the light array length value
-            {
-                i++;
-            }
+            Destroy(other.gameObject);
+        }else if (other.gameObject.CompareTag("Light2"))//ºÒÀÌ ¿ªÀ¸·Î ÄÑÁü
+        {
+            Transform t = other.gameObject.GetComponentInChildren<Transform>(true);
+            t.GetChild(0).gameObject.SetActive(true);
         }
     }
+
 }
