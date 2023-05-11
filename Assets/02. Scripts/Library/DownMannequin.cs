@@ -29,12 +29,12 @@ public class DownMannequin : MonoBehaviour
 
         if (separate)
         {
-            StartCoroutine(seprtemannequin());
-
             for (int i = 0; i < transform.childCount; i++)
             {
                 this.transform.GetChild(i).GetComponent<Rigidbody>().useGravity = true;
                 this.transform.GetChild(i).GetComponent<Collider>().isTrigger = false;
+
+                this.transform.GetChild(i).transform.SetParent(null);
             }
         }
 
@@ -45,18 +45,7 @@ public class DownMannequin : MonoBehaviour
         //일정 높이에 도달하면 마네킹 공중 분해
         if (other.gameObject.CompareTag("Down"))
         {
-            separate = true; ;
+            separate = true;
         }
-    }
-    IEnumerator seprtemannequin()
-    {
-        yield return new WaitForSeconds(0.3f);
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            this.transform.GetChild(i).GetComponent<Collider>().isTrigger = true;
-            this.transform.GetChild(i).transform.SetParent(null);
-        }
-        yield return new WaitForSeconds(0.5f);
-        DestroyMannequin = true;
     }
 }
