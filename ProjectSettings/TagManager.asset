@@ -8,6 +8,7 @@ TagManager:
   - Light2
   - buttons
   - Down
+  - mannequinpart
   layers:
   - Default
   - TransparentFX
