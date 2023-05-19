@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class book : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class book : MonoBehaviour
     HashSet<int> exclude = new HashSet<int>();//중복되지 않도록 사용
     int adf = 5; // 심박수에 따라 변경 될 값.
 
+    private AudioSource audioSource;
+    public AudioClip[] clips;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +30,7 @@ public class book : MonoBehaviour
             rigid[i] = books[i].GetComponent<Rigidbody>();
             p[i] = (target.transform.position - books[i].transform.position).normalized;
         }
+        audioSource = GetComponent<AudioSource>();
     }
 
     int ExceptRandom() // 랜덤한 숫자
@@ -41,6 +46,7 @@ public class book : MonoBehaviour
         int x = ExceptRandom();
         exclude.Add(x);
         rigid[x].AddForce(-1.0f * adf * p[x], ForceMode.Impulse);
+        StartCoroutine(bookSound());
     }
 
     // Update is called once per frame
@@ -50,5 +56,14 @@ public class book : MonoBehaviour
         {
             AddForceToBooks();
         }
+    }
+
+    IEnumerator bookSound()
+    {
+        int x;
+        yield return new WaitForSeconds(1.5f);
+        x = Random.Range(0, 3);
+        audioSource.clip = clips[x];
+        audioSource.PlayOneShot(audioSource.clip);
     }
 }

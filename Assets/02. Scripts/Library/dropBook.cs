@@ -8,10 +8,15 @@ public class dropBook : MonoBehaviour
     public GameObject[] books;
     private Queue<GameObject> queue = new Queue<GameObject>();
     private int cnt = 0;
+    private int x, y;
+
+    private AudioSource audioSource;
+    public AudioClip[] clips;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,18 +28,29 @@ public class dropBook : MonoBehaviour
     private void OnTriggerEnter(Collider other)//q플레이어 머리 위에서 책 떨어지는 이벤트
     {
         if (other.gameObject.CompareTag("Player") && cnt<3) {
-            int y = Random.Range(5, 12);//책의 개수
+            y = Random.Range(5, 12);//책의 개수
             Vector3 pos = new Vector3(other.transform.position.x, 12, other.transform.position.z);
             for (int i = 0; i  < y; i++)
             {
                 int x = Random.Range(0, 4);//책의 종류
                 queue.Enqueue(Instantiate(books[x], pos, Quaternion.identity));//매번 생성되는 책의 개수가 다르기 때문에 queue사용
-                StartCoroutine(deleteBooks());
+                //StartCoroutine(deleteBooks());
+                StartCoroutine(BookSound());
             }
             this.transform.Rotate(0f, 120f, 0f);
         }
     }
+    IEnumerator BookSound()
+    {
+        yield return new WaitForSeconds(1.5f);
+        for(int i = 0; i < y; i++)
+        {
+            x = Random.Range(0, 3);
+            audioSource.clip = clips[x];
+            audioSource.PlayOneShot(audioSource.clip);
+        }
 
+    }
     IEnumerator deleteBooks()//10초 뒤 생성된 책 Clone 삭제
     {
         cnt++;
