@@ -62,7 +62,7 @@ public class book : MonoBehaviour
     {
         int x;
         yield return new WaitForSeconds(1.5f);
-        x = Random.Range(0, 3);
+        x = Random.Range(0, 4);
         audioSource.clip = clips[x];
         audioSource.PlayOneShot(audioSource.clip);
     }

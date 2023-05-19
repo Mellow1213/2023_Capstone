@@ -10,13 +10,9 @@ public class dropBook : MonoBehaviour
     private int cnt = 0;
     private int x, y;
 
-    private AudioSource audioSource;
-    public AudioClip[] clips;
-
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -35,21 +31,9 @@ public class dropBook : MonoBehaviour
                 int x = Random.Range(0, 4);//책의 종류
                 queue.Enqueue(Instantiate(books[x], pos, Quaternion.identity));//매번 생성되는 책의 개수가 다르기 때문에 queue사용
                 //StartCoroutine(deleteBooks());
-                StartCoroutine(BookSound());
             }
             this.transform.Rotate(0f, 120f, 0f);
         }
-    }
-    IEnumerator BookSound()
-    {
-        yield return new WaitForSeconds(1.5f);
-        for(int i = 0; i < y; i++)
-        {
-            x = Random.Range(0, 3);
-            audioSource.clip = clips[x];
-            audioSource.PlayOneShot(audioSource.clip);
-        }
-
     }
     IEnumerator deleteBooks()//10초 뒤 생성된 책 Clone 삭제
     {

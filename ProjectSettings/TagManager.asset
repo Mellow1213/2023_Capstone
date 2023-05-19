@@ -9,6 +9,7 @@ TagManager:
   - buttons
   - Down
   - books
+  - floor
   layers:
   - Default
   - TransparentFX
