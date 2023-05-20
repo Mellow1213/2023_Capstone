@@ -505,7 +505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bpm: 83
-  average_bpm: 0
+  average_bpm: 110.91
 --- !u!4 &238885949
 Transform:
   m_ObjectHideFlags: 0

@@ -7,7 +7,35 @@ using Firebase.Database;
 
 
 public class FTU : MonoBehaviour // Firebase to Unity
-{
+{   private static FTU instance;
+
+    // 싱글톤 인스턴스에 접근할 수 있는 속성
+    public static FTU Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                // 씬에서 MySingleton을 찾거나 없을 경우 새로 생성
+                instance = FindObjectOfType<FTU>();
+
+                // 씬에 MySingleton 인스턴스가 없는 경우 새로운 게임오브젝트에 추가
+                if (instance == null)
+                {
+                    GameObject singletonObject = new GameObject();
+                    instance = singletonObject.AddComponent<FTU>();
+                    singletonObject.name = "FTU";
+                }
+
+                // 씬 전환 시에도 유지하기 위해 삭제하지 않음
+                DontDestroyOnLoad(instance.gameObject);
+            }
+
+            return instance;
+        }
+    }
+    
+    
     private DatabaseReference database; // 데이터베이스
 
     // Start is called before the first frame update
