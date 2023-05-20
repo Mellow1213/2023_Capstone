@@ -38,7 +38,7 @@ public class BpmManager : MonoBehaviour
             Debug.Log("출력");
             if(currentBPM != 0.0)
             {
-                //BPM_TextMeshPro.text = "BPM : " + currentBPM;
+                BPM_TextMeshPro.text = "BPM : " + currentBPM;
 
                 bpmData.bpm.Add(currentBPM.ToString());     // bpm 리스트에 데이터베이스에서 가져온 bpm 저장
                 BpmSave.Save(bpmData, fileName);            // json 파일에 저장
