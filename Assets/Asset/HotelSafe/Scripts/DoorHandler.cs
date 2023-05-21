@@ -19,7 +19,23 @@ public class DoorHandler : MonoBehaviour {
 	void Update () {
 		
 	}
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if (isOpen)
+            {
+                CloseDoor();
+            }
+            else
+            {
+                if (safeHandler == null || !safeHandler.IsLocked())
+                {
+                    OpenDoor();
+                }
+            }
+        }
+    }
     private void OnMouseDown()
     {
         if (isOpen)

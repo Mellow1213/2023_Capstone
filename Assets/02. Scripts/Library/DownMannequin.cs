@@ -10,9 +10,22 @@ public class DownMannequin : MonoBehaviour
     private Vector3 ptPos = Vector3.zero;
     private bool separate = false;
     public bool DestroyMannequin = false;
+
+    private int Level = 1; //심박수 값, 0~1 사이 값이라고 추측
+
+    private AudioSource audioSource;
+    public AudioClip clips;
+
+    //safe door open
+    private DoorHandler DH;
+    public GameObject safe;
+
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = clips;
+        DH = safe.AddComponent<DoorHandler>();
     }
 
     // Update is called once per frame
@@ -23,11 +36,13 @@ public class DownMannequin : MonoBehaviour
         transform.LookAt(ptPos);
 
         //심박수에 따라 마네킹이 아래로 내려옴
-        //if(heartbeat > default + 15)//heartbeat은 실시간 심박수, default은 평균, 분이나 몇십초마다 평균을 계산하는 것도 나쁘지 않을듯.
-        if(Input.GetMouseButtonDown(0)) 
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - (3*Time.deltaTime), this.transform.position.z);
+        if(Input.GetMouseButtonDown(0))//심박수 이벤트
+        {
+            audioSource.PlayOneShot(audioSource.clip);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - (3f * Level), this.transform.position.z);
+        }
 
-        if (separate)
+        if (separate || DH.isOpen)    //safe door open
         {
             for (int i = 0; i < transform.childCount; i++)
             {
