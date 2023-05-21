@@ -9,6 +9,8 @@ TagManager:
   - buttons
   - Down
   - books
+  - SpotLight
+  - PointLight
   layers:
   - Default
   - TransparentFX
