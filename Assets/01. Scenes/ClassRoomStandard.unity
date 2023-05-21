@@ -2063,6 +2063,16 @@ MonoBehaviour:
   - {fileID: 1200512257}
   - {fileID: 776435871}
   player: {fileID: 1342353386}
+  event1:
+  - {fileID: 8300000, guid: 38cb2854866cb468ca23e2d850a27759, type: 3}
+  - {fileID: 8300000, guid: 31a0130b63510434daae58c1d63a0439, type: 3}
+  - {fileID: 8300000, guid: 89b633c468352492991743e9d4f001a5, type: 3}
+  - {fileID: 8300000, guid: e20a92cf6e123496eaf2618fc04126dd, type: 3}
+  event2:
+  - {fileID: 8300000, guid: 4ee2c866e2b534767bb509b4a43ffb0f, type: 3}
+  - {fileID: 8300000, guid: 3bb9a2790eaa440888de71f65be543f9, type: 3}
+  - {fileID: 8300000, guid: 9cad5e41ad82b4cf692d79b4d0fead49, type: 3}
+  - {fileID: 8300000, guid: 5ca8fa4042a05443c87192d2ebc686bf, type: 3}
 --- !u!4 &448269529
 Transform:
   m_ObjectHideFlags: 0
@@ -2719,6 +2729,11 @@ PrefabInstance:
       objectReference: {fileID: 1342353386}
     - target: {fileID: 3998836068419760668, guid: 06f91f05a98351440b68d57c49684ce9,
         type: 3}
+      propertyPath: securityFootstep
+      value: 
+      objectReference: {fileID: 8300000, guid: 8d88d40d714d646c8baaa932e84d8982, type: 3}
+    - target: {fileID: 3998836068419760668, guid: 06f91f05a98351440b68d57c49684ce9,
+        type: 3}
       propertyPath: patrols.Array.data[0]
       value: 
       objectReference: {fileID: 1507587645}
@@ -2729,6 +2744,108 @@ PrefabInstance:
       objectReference: {fileID: 1520541988}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06f91f05a98351440b68d57c49684ce9, type: 3}
+--- !u!1 &636521830 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3998836068419760662, guid: 06f91f05a98351440b68d57c49684ce9,
+    type: 3}
+  m_PrefabInstance: {fileID: 636521829}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &636521831
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636521830}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &651391837
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5203,7 +5320,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1342353387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5216,9 +5333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dabdee13bedc38b409ce5d4d3a817d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myLayer:
-    serializedVersion: 2
-    m_Bits: 0
   ob: {fileID: 1463694477}
   doorSound: {fileID: 0}
   DoorEventTrue: 0
