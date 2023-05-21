@@ -486,7 +486,7 @@ GameObject:
   - component: {fileID: 238885949}
   - component: {fileID: 238885948}
   m_Layer: 0
-  m_Name: EventManager
+  m_Name: BPMEventManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
