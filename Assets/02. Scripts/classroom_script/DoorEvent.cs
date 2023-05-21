@@ -10,7 +10,6 @@ public class DoorEvent : MonoBehaviour
     public GameObject[] monster;
 
     public GameObject player;
-    private lockerOpen LO;
 
     public AudioClip[] event1;
     public AudioClip[] event2;
@@ -19,20 +18,18 @@ public class DoorEvent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LO = player.GetComponent<lockerOpen>();
         m_Source = GetComponent<AudioSource>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (LO.DoorEventTrue)//일정 소음이 넘으면 문이 달그락 거리는 이벤트
+        if (lockerRotation.instance.DoorEventTrue)//일정 소음이 넘으면 문이 달그락 거리는 이벤트
         {
             num = Random.Range(1, 4);
             //Debug.Log(num);
             StartCoroutine(doorSoundEvent());
-            LO.DoorEventTrue = false;
+            lockerRotation.instance.DoorEventTrue = false;
             switch (num % 2)
             {
                 case 0:
@@ -60,7 +57,7 @@ public class DoorEvent : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         for (int i = 0; i < 6; i++)
         {
-            int a = Random.Range(0, 5);
+            int a = Random.Range(0, 4);
             yield return new WaitForSeconds(0.9f);
             m_Source.clip = event1[a];
             m_Source.PlayOneShot(m_Source.clip);

@@ -9,7 +9,6 @@ public class Security : MonoBehaviour
     public GameObject[] patrols;
 
     public GameObject player;
-    private lockerOpen LO;
     private float dis;
 
     public AudioClip securityFootstep;
@@ -17,16 +16,17 @@ public class Security : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LO = player.GetComponent<lockerOpen>();
         m_Source = GetComponent<AudioSource>();
         m_Source.clip = securityFootstep;
+        m_Source.Play();
+        m_Source.loop = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         playerDistanceSound();
-        if (LO.DoorEventTrue)
+        if (lockerRotation.instance.DoorEventTrue)
         {
             StartCoroutine(activeSecuity());
         }
@@ -38,13 +38,12 @@ public class Security : MonoBehaviour
 
     private void playerDistanceSound()
     {
-        dis = Vector3.Distance(player.transform.position, this.gameObject.transform.position);
-        m_Source.Play();
-        m_Source.loop = true;
-        if (dis > 20)
-            m_Source.volume -= 0.07f;
+        dis = Vector3.Distance(patrols[i % 2].transform.position, this.gameObject.transform.position);
+        //Debug.Log(dis);
+        if (dis < 15)
+            m_Source.volume -= 0.03f * Time.deltaTime;
         else
-            m_Source.volume += 0.07f;
+            m_Source.volume += 0.03f * Time.deltaTime;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -56,9 +55,9 @@ public class Security : MonoBehaviour
     IEnumerator activeSecuity()//일정 소음이 넘으면 불빛(손전등 역할)이 잠시 꺼짐
     {
         this.transform.GetChild(0).gameObject.SetActive(false);
-        m_Source.Stop();
+        m_Source.volume = 0;
         yield return new WaitForSeconds(6);
         this.transform.GetChild(0).gameObject.SetActive(true);
-        m_Source.Play();
+        m_Source.volume = 0.8f;
     }
 }
