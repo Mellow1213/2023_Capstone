@@ -62,7 +62,8 @@ public class lockerRotation : MonoBehaviour
             Gauge += Time.deltaTime * speed.magnitude; //���ӵ��� �� ����(����) ũ��
             audioSource.volume = Gauge;
 
-            if (Gauge > 0.7
+            if (Gauge > 0.7)
+            {
                 //���ε��� �Ҹ�, �ִϸ��̼� ����
                 DoorEventTrue = true;
                 Gauge = 0.3f;
