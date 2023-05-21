@@ -11,6 +11,10 @@ TagManager:
   - books
   - SpotLight
   - PointLight
+  - Cage
+  - BlueRoom
+  - RedRoom
+  - YellowRoom
   layers:
   - Default
   - TransparentFX

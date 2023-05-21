@@ -1,39 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 
-// ì»¬ëŸ¬ë£¸ ì² ì¥ ì—´ë¦¬ëŠ” ìŠ¤í¬ë¦½íŠ¸ì¸ë° ë³€ê²½ ì˜ˆì •
+// ÄÃ·¯·ë °¨¿Á ¹® ÄÁÆ®·Ñ ½ºÅ©¸³Æ®
 
 public class DoorCtrl : MonoBehaviour
 {
-    private string obj_name;            // ëª‡ ë²ˆ ì² ì¥ì¸ì§€ í™•ì¸ ìœ„í•¨
-    private float pre_position_y;       // ì² ì¥ ë‹«í˜€ìˆì„ ë•Œ y ì¢Œí‘œ ì €ì¥í•  ë³€ìˆ˜
-
+    private bool door_open;
     // Start is called before the first frame update
     void Start()
     {
-        obj_name = transform.name;      // ì˜¤ë¸Œì íŠ¸ ì´ë¦„ ì €ì¥
-        pre_position_y = transform.position.y;      // ì² ì¥ ë‹«í˜€ìˆì„ ë•Œ y ì¢Œí‘œ ì €ì¥
+        door_open = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+    }
 
-        if (Input.GetMouseButton(0) && transform.position.y == pre_position_y && obj_name.Equals("Cage1")) // ì™¼ìª½ ë§ˆìš°ìŠ¤ í´ë¦­ ì‹œ, yì¢Œí‘œê°€ ì² ì¥ ë‹«í˜€ìˆì„ ë•Œ y ì¢Œí‘œì™€ ê°™ìœ¼ë©´(= ì² ì¥ ë‹«í˜€ìˆìŒ), ì˜¤ë¸Œì íŠ¸ ì´ë¦„ì´ Cage1 ì¼ ë•Œ
+    private void OnTriggerEnter(Collider other)
+    {
+        if (transform.name.Equals("Key_BlueRoom") && other.gameObject.CompareTag("BlueRoom"))   // Å°°¡ ÆÄ¶õ»öÀÌ°í Å°ÆĞµåÀÇ ÅÂ±×°¡ ÆÄ¶õ¹æÀÌ¸é ¹® ¿­ ¼ö ÀÖÀ½
         {
-            // ì² ì¥ì˜ yì¢Œí‘œê°€ 30ì´ˆ ë™ì•ˆ + 4ë§Œí¼ ì²œì²œíˆ ì˜¬ë¼ê°€ë‹¤ê°€ ì ì  ë¹ ë¥´ê²Œ ì˜¬ë¼ê° -> ì² ì¥ ì˜¬ë¼ê°€ëŠ” ì• ë‹ˆë©”ì´ì…˜
-            transform.DOMove(new Vector3(transform.position.x, transform.position.y + 4.0f, transform.position.z), 20.0f, false).SetEase(Ease.InQuad);
-
-        }
-
-        if (Input.GetMouseButton(1) && transform.position.y == pre_position_y && obj_name.Equals("Cage2")) // ì™¼ìª½ ë§ˆìš°ìŠ¤ í´ë¦­ ì‹œ, yì¢Œí‘œê°€ ì² ì¥ ë‹«í˜€ìˆì„ ë•Œ y ì¢Œí‘œì™€ ê°™ìœ¼ë©´(= ì² ì¥ ë‹«í˜€ìˆìŒ), ì˜¤ë¸Œì íŠ¸ ì´ë¦„ì´ Cage2 ì¼ ë•Œ
+            door_open = true;
+            // ´ç°Ü¼­ ¹® ¿©´Â ÄÚµå ÇÊ¿ä
+        } else if(transform.name.Equals("Key_RedRoom") && other.gameObject.CompareTag("RedRoom"))   // Å°°¡ »¡°£»öÀÌ°í Å°ÆĞµåÀÇ ÅÂ±×°¡ »¡°£¹æÀÌ¸é ¹® ¿­ ¼ö ÀÖÀ½
         {
-            // ì² ì¥ì˜ yì¢Œí‘œê°€ 30ì´ˆ ë™ì•ˆ + 4ë§Œí¼ ì²œì²œíˆ ì˜¬ë¼ê°€ë‹¤ê°€ ì ì  ë¹ ë¥´ê²Œ ì˜¬ë¼ê° -> ì² ì¥ ì˜¬ë¼ê°€ëŠ” ì• ë‹ˆë©”ì´ì…˜
-            transform.DOMove(new Vector3(transform.position.x, transform.position.y + 4.0f, transform.position.z), 20.0f, false).SetEase(Ease.InQuad);
-
+            door_open = true;
+            // ´ç°Ü¼­ ¹® ¿©´Â ÄÚµå ÇÊ¿ä
         }
-
+        else if (transform.name.Equals("Key_GreenRoom") && other.gameObject.CompareTag("YellowRoom"))    // Å°°¡ ÃÊ·Ï»öÀÌ°í Å°ÆĞµåÀÇ ÅÂ±×°¡ ³ë¶õ¹æÀÌ¸é ¹® ¿­ ¼ö ÀÖÀ½
+        {
+            door_open = true;
+            // ´ç°Ü¼­ ¹® ¿©´Â ÄÚµå ÇÊ¿ä
+        }
     }
 }
