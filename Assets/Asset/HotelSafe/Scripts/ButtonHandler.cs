@@ -37,7 +37,13 @@ public class ButtonHandler : MonoBehaviour {
     {
         ButtonPressed();
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            ButtonPressed();
+        }
+    }
     private void ButtonPressed() {
         if(buttonAnimator != null) { 
             buttonAnimator.Play(GetAnimationName(), -1, 0f);
