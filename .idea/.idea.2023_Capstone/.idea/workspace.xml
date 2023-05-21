@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1db58fa6-dd38-4712-9332-597a6543c734" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02. Scripts/BPM/BpmManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Scripts/BPM/BpmManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Prefabs/LeftRenderModel Slim.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Prefabs/LeftRenderModel Slim.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Prefabs/Watch_Temp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Prefabs/Watch_Temp.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asset/Leather_Watches/Assets/Prefabs/Watch_Adjustment_LeftSide_FatHand_WithHand.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset/Leather_Watches/Assets/Prefabs/Watch_Adjustment_LeftSide_FatHand_WithHand.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/saves/test.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/saves/test.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03. Materials/UNDER_001.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03. Materials/classroomVillain.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03. Materials/footstep.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03. Materials/forest.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03. Materials/prototype_elevator.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asset/SkinlessZombie/Art/Textures/Built-In/builtIn.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asset/SkinlessZombie/Art/Textures/URP/URP.unitypackage.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +19,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/02. Scripts/BPM/BpmManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/02. Scripts/BPMEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/02. Scripts/DoorRotate_Temp.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/02. Scripts/Library/drop_sound.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../My project (3)/Assets/DemoArduino.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">

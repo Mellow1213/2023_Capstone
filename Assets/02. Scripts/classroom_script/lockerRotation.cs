@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public class lockerRotation : MonoBehaviour
 {
     private float Gauge = 0.3f;
 
-    private GameObject ob;//¿ø·¡´Â hitÀ» »ç¿ëÇØ¼­ ´ê´Â object¸¦ °¨ÁöÇß´Âµ¥, ¹ø°Å·Î¿ö¼­ Å×½ºÆ®¿ëÀ¸·Î ¿òÁ÷ÀÏ »ç¹°ÇÔ ¹®À» ÀÓÀÇ·Î ¼³Á¤ÇÔ.
+    private GameObject ob;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ hitï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ objectï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß´Âµï¿½, ï¿½ï¿½ï¿½Å·Î¿ï¿½ï¿½ï¿½ ï¿½×½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ç¹°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ç·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 
     //private OVRPlayerCtrl playerCtrl;
     public GameObject player;
@@ -15,16 +16,16 @@ public class lockerRotation : MonoBehaviour
     public AudioClip doorSound;
     private AudioSource audioSource;
 
-    //Angular Velocity, ºí·Î±× Âü°í
-    Quaternion previousRotation; //Àü ÇÁ·¹ÀÓÀÇ ·ÎÅ×ÀÌ¼Ç °ª
-    Vector3 angularVelocity; //°¢¼Óµµ¸¦ °ü¸®ÇÒ º¯¼ö
+    //Angular Velocity, ï¿½ï¿½Î±ï¿½ ï¿½ï¿½ï¿½ï¿½
+    Quaternion previousRotation; //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½
+    Vector3 angularVelocity; //ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     Vector3 speed;
 
     public bool DoorEventTrue = false;
 
     private bool opening = false;
 
-    public Vector3 GetPedestrianAngularVelocity()//°¢ ¼Óµµ¸¦ ±¸ÇÏ´Â ÇÔ¼ö
+    public Vector3 GetPedestrianAngularVelocity()//ï¿½ï¿½ ï¿½Óµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
     {
         Quaternion deltaRotation = ob.transform.rotation * Quaternion.Inverse(previousRotation);
 
@@ -32,12 +33,12 @@ public class lockerRotation : MonoBehaviour
 
         deltaRotation.ToAngleAxis(out var angle, out var axis);
 
-        //°¢µµ¿¡¼­ ¶óµð¾ÈÀ¸·Î º¯È¯
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
         angle *= Mathf.Deg2Rad;
 
         angularVelocity = (1.0f / Time.deltaTime) * angle * axis;
 
-        //°¢¼Óµµ ¹ÝÈ¯
+        //ï¿½ï¿½ï¿½Óµï¿½ ï¿½ï¿½È¯
         return angularVelocity;
     }
     // Start is called before the first frame update
@@ -58,12 +59,11 @@ public class lockerRotation : MonoBehaviour
         {
             speed = GetPedestrianAngularVelocity();
             Debug.Log("speed : " + speed);
-            Gauge += Time.deltaTime * speed.magnitude; //°¢¼Óµµ°¡ °ð »ç¿îµå(¼ÒÀ½) Å©±â
+            Gauge += Time.deltaTime * speed.magnitude; //ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½) Å©ï¿½ï¿½
             audioSource.volume = Gauge;
 
-            if (Gauge > 0.7)
-            {
-                //¹®µÎµé±â´Â ¼Ò¸®, ¾Ö´Ï¸ÞÀÌ¼Ç ½ÇÇà
+            if (Gauge > 0.7
+                //ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½ ï¿½Ò¸ï¿½, ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½
                 DoorEventTrue = true;
                 Gauge = 0.3f;
                 Debug.Log("good");
@@ -77,7 +77,7 @@ public class lockerRotation : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("handle"))//if (other.gameObject.CompareTag("handle") && playerCtrl.down)//Á¶ÀÌ½ºÆ½À» Àâ°í ÀÖÀ» ¶§
+        if (other.gameObject.CompareTag("handle"))//if (other.gameObject.CompareTag("handle") && playerCtrl.down)//ï¿½ï¿½ï¿½Ì½ï¿½Æ½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
         {
             Debug.Log("touch");
             opening = true;
