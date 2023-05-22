@@ -45,32 +45,7 @@ public class player_move : MonoBehaviour
         // 이동방향 * 속도 * 프레임단위 시간을 곱해서 카메라의 트랜스폼을 이동
         transform.Translate(dir * moveSpeed * Time.deltaTime);
     }
-    /*
-    public float Speed = 5.0f;
-    public float rotateSpeed = 2f;
-
-    Rigidbody body;
-
-    public static float h = 0, v = 0;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        body = GetComponent<Rigidbody>();
-    }
-
-    private void Update()
-    {
-        Vector3 dir = new Vector3(h, 0, v);
-        h = Input.GetAxis("Horizontal");
-        v = Input.GetAxis("Vertical");
-
-        transform.Translate(Vector3.forward * Speed * v * Time.deltaTime);
-        transform.Rotate(Vector3.up * rotateSpeed * h);
-
-
-
-    }*/
+  
 
 
 
