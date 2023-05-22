@@ -10,27 +10,16 @@ public class dropBook : MonoBehaviour
     private int cnt = 0;
     private int x, y;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)//q플레이어 머리 위에서 책 떨어지는 이벤트
     {
         if (other.gameObject.CompareTag("Player") && cnt<3) {
-            y = Random.Range(5, 12);//책의 개수
+            y = Random.Range(10, 20);//책의 개수
             Vector3 pos = new Vector3(other.transform.position.x, 12, other.transform.position.z);
             for (int i = 0; i  < y; i++)
             {
                 int x = Random.Range(0, 4);//책의 종류
                 queue.Enqueue(Instantiate(books[x], pos, Quaternion.identity));//매번 생성되는 책의 개수가 다르기 때문에 queue사용
-                //StartCoroutine(deleteBooks());
+                StartCoroutine(deleteBooks());
             }
             this.transform.Rotate(0f, 120f, 0f);
         }
