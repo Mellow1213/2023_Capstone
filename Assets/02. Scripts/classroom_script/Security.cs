@@ -13,6 +13,9 @@ public class Security : MonoBehaviour
 
     public AudioClip securityFootstep;
     private AudioSource m_Source;
+
+    public static Security instance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,19 +23,17 @@ public class Security : MonoBehaviour
         m_Source.clip = securityFootstep;
         m_Source.Play();
         m_Source.loop = true;
+        m_Source.volume = 0.6f;
+        Security.instance = this;
     }
 
     // Update is called once per frame
     void Update()
     {
         playerDistanceSound();
-        if (lockerRotation.instance.DoorEventTrue)
+        if (m_Source.volume != 0)
         {
-            StartCoroutine(activeSecuity());
-        }
-        else
-        {
-            this.transform.position = Vector3.MoveTowards(this.transform.position, patrols[i%2].transform.position, Time.deltaTime * 2);
+            this.transform.position = Vector3.MoveTowards(this.transform.position, patrols[i % 2].transform.position, Time.deltaTime * 2);
         }
     }
 
@@ -52,12 +53,12 @@ public class Security : MonoBehaviour
             i++;
         }
     }
-    IEnumerator activeSecuity()//ÀÏÁ¤ ¼ÒÀ½ÀÌ ³ÑÀ¸¸é ºÒºû(¼ÕÀüµî ¿ªÇÒ)ÀÌ Àá½Ã ²¨Áü
+    public IEnumerator activeSecuity()//ÀÏÁ¤ ¼ÒÀ½ÀÌ ³ÑÀ¸¸é ºÒºû(¼ÕÀüµî ¿ªÇÒ)ÀÌ Àá½Ã ²¨Áü
     {
         this.transform.GetChild(0).gameObject.SetActive(false);
         m_Source.volume = 0;
         yield return new WaitForSeconds(6);
         this.transform.GetChild(0).gameObject.SetActive(true);
-        m_Source.volume = 0.8f;
+        m_Source.volume = 0.6f;
     }
 }

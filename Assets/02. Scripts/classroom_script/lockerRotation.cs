@@ -6,18 +6,13 @@ using Debug = UnityEngine.Debug;
 
 public class lockerRotation : MonoBehaviour
 {
-    private float Gauge = 0.3f;
-
-    public AudioClip lockerSound;
-    private AudioSource audioSource;
+    private float Gauge = 0.25f;
 
     //Angular Velocity, ��α� ����
     Quaternion previousRotation; //�� �������� �����̼� ��
     Vector3 angularVelocity; //���ӵ��� ������ ����
     Vector3 speed;
 
-    public static lockerRotation instance;
-    public bool DoorEventTrue = false;
 
     private Quaternion pastRotation, currentRotation;
     private bool isRotate = false;
@@ -39,10 +34,7 @@ public class lockerRotation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = this.GetComponent<AudioSource>();
-        audioSource.clip = lockerSound;
         pastRotation = this.transform.rotation;
-        lockerRotation.instance = this;
     }
 
     // Update is called once per frame
@@ -74,21 +66,21 @@ public class lockerRotation : MonoBehaviour
     IEnumerator curRotation()
     {
         speed = GetPedestrianAngularVelocity();
-        Debug.Log("speed : " + speed);
-        Gauge += Time.deltaTime * speed.magnitude; //���ӵ��� �� ����(����) ũ��
-        audioSource.volume = Gauge;
-
-        if (Gauge > 0.7)
+        //Debug.Log("speed : " + speed);
+        Gauge += 0.008f * speed.magnitude; //���ӵ��� �� ����(����) ũ��
+        Debug.Log("Gauge : " + Gauge);
+        if (Gauge > 0.6f)
         {
             //���ε��� �Ҹ�, �ִϸ��̼� ����
-            audioSource.PlayOneShot(audioSource.clip);
-            DoorEventTrue = true;
-            Gauge = 0.3f;
-            Debug.Log("good");
+            LockerOpenSound.instance.PlayOpenSound();
+            DoorEvent.instance.DoorEventFunc();
+            StartCoroutine(Security.instance.activeSecuity());
+            Gauge = 0.25f;
+            //Debug.Log("good");
         }
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         pastRotation = currentRotation;
-
     }
+
 }
