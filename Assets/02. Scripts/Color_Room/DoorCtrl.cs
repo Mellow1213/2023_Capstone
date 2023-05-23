@@ -2,15 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// ÄÃ·¯·ë °¨¿Á ¹® ÄÁÆ®·Ñ ½ºÅ©¸³Æ®
+// ì»¬ëŸ¬ë£¸ ê°ì˜¥ ë¬¸ ì»¨íŠ¸ë¡¤ ìŠ¤í¬ë¦½íŠ¸
 
 public class DoorCtrl : MonoBehaviour
 {
     private bool door_open;
+    public GameObject door;               // ë¬¸ ì˜¤ë¸Œì íŠ¸
+
+    private AudioSource card_audio;       // ì¹´ë“œ ì°ì„ ë•Œ íš¨ê³¼ìŒ
+    private AudioSource door_audio;       // ë¬¸ ì—´ë¦´ ë•Œ íš¨ê³¼ìŒ
+
     // Start is called before the first frame update
     void Start()
     {
         door_open = false;
+        card_audio = GetComponent<AudioSource>();            // ì¹´ë“œ ì˜¤ë””ì˜¤ ì†ŒìŠ¤ ì €ì¥
+        door_audio = door.GetComponent<AudioSource>();       // ë¬¸ ì˜¤ë””ì˜¤ ì†ŒìŠ¤ ì €ì¥
     }
 
     // Update is called once per frame
@@ -21,19 +28,32 @@ public class DoorCtrl : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (transform.name.Equals("Key_BlueRoom") && other.gameObject.CompareTag("BlueRoom"))   // Å°°¡ ÆÄ¶õ»öÀÌ°í Å°ÆĞµåÀÇ ÅÂ±×°¡ ÆÄ¶õ¹æÀÌ¸é ¹® ¿­ ¼ö ÀÖÀ½
+        if (transform.name.Equals("Key_BlueRoom") && other.gameObject.CompareTag("BlueRoom"))   // í‚¤ê°€ íŒŒë€ìƒ‰ì´ê³  í‚¤íŒ¨ë“œì˜ íƒœê·¸ê°€ íŒŒë€ë°©ì´ë©´ ë¬¸ ì—´ ìˆ˜ ìˆìŒ
         {
+            card_audio.Play();       // ì¹´ë“œ ì°ì„ ë•Œ íš¨ê³¼ìŒ ì¬ìƒ(ì‚‘-)
+            StartCoroutine(DoorOpen());
             door_open = true;
-            // ´ç°Ü¼­ ¹® ¿©´Â ÄÚµå ÇÊ¿ä
-        } else if(transform.name.Equals("Key_RedRoom") && other.gameObject.CompareTag("RedRoom"))   // Å°°¡ »¡°£»öÀÌ°í Å°ÆĞµåÀÇ ÅÂ±×°¡ »¡°£¹æÀÌ¸é ¹® ¿­ ¼ö ÀÖÀ½
+            // ë‹¹ê²¨ì„œ ë¬¸ ì—¬ëŠ” ì½”ë“œ í•„ìš”
+        } else if(transform.name.Equals("Key_RedRoom") && other.gameObject.CompareTag("RedRoom"))   // í‚¤ê°€ ë¹¨ê°„ìƒ‰ì´ê³  í‚¤íŒ¨ë“œì˜ íƒœê·¸ê°€ ë¹¨ê°„ë°©ì´ë©´ ë¬¸ ì—´ ìˆ˜ ìˆìŒ
         {
+            card_audio.Play();       // ì¹´ë“œ ì°ì„ ë•Œ íš¨ê³¼ìŒ ì¬ìƒ(ì‚‘-)
+            StartCoroutine(DoorOpen());
             door_open = true;
-            // ´ç°Ü¼­ ¹® ¿©´Â ÄÚµå ÇÊ¿ä
+            // ë‹¹ê²¨ì„œ ë¬¸ ì—¬ëŠ” ì½”ë“œ í•„ìš”
         }
-        else if (transform.name.Equals("Key_GreenRoom") && other.gameObject.CompareTag("YellowRoom"))    // Å°°¡ ÃÊ·Ï»öÀÌ°í Å°ÆĞµåÀÇ ÅÂ±×°¡ ³ë¶õ¹æÀÌ¸é ¹® ¿­ ¼ö ÀÖÀ½
+        else if (transform.name.Equals("Key_GreenRoom") && other.gameObject.CompareTag("YellowRoom"))    // í‚¤ê°€ ì´ˆë¡ìƒ‰ì´ê³  í‚¤íŒ¨ë“œì˜ íƒœê·¸ê°€ ë…¸ë€ë°©ì´ë©´ ë¬¸ ì—´ ìˆ˜ ìˆìŒ
         {
+            card_audio.Play();       // ì¹´ë“œ ì°ì„ ë•Œ íš¨ê³¼ìŒ ì¬ìƒ(ì‚‘-)
+            StartCoroutine(DoorOpen());
             door_open = true;
-            // ´ç°Ü¼­ ¹® ¿©´Â ÄÚµå ÇÊ¿ä
+            // ë‹¹ê²¨ì„œ ë¬¸ ì—¬ëŠ” ì½”ë“œ í•„ìš”
         }
+    }
+
+    IEnumerator DoorOpen()
+    {
+        yield return new WaitForSeconds(1.0f);
+
+        door_audio.Play();
     }
 }

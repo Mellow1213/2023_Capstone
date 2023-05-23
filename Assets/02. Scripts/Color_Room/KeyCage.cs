@@ -3,31 +3,54 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-// Ã¶Àå ¹® ¿©´Â ½ºÅ©¸³Æ®
+// ì² ì¥ ë¬¸ ì—¬ëŠ” ìŠ¤í¬ë¦½íŠ¸
 
 public class KeyCage : MonoBehaviour
 {
-    public GameObject cage;         // Ã¶Àå ¿ÀºêÁ§Æ® ÀúÀåÇÒ º¯¼ö
-    private float pre_position_y;   // Ã¶Àå ´İÇôÀÖÀ» ¶§ yÁÂÇ¥ ÀúÀåÇÒ º¯¼ö
+    public GameObject cage;         // ì² ì¥ ì˜¤ë¸Œì íŠ¸ ì €ì¥í•  ë³€ìˆ˜
+    private float pre_position_y;   // ì² ì¥ ë‹«í˜€ìˆì„ ë•Œ yì¢Œí‘œ ì €ì¥í•  ë³€ìˆ˜
+
+    private AudioSource card_audio;       // ì¹´ë“œ ì°ì„ ë•Œ íš¨ê³¼ìŒ
+    private AudioSource cage_audio;        // ì² ì¥ ì—´ë¦´ ë•Œ íš¨ê³¼ìŒ
 
     // Start is called before the first frame update
     void Start()
     {
-        pre_position_y = cage.transform.position.y;     // Ã¶Àå ´İÇôÀÖÀ» ¶§ yÁÂÇ¥ ÀúÀå
+        pre_position_y = cage.transform.position.y;     // ì² ì¥ ë‹«í˜€ìˆì„ ë•Œ yì¢Œí‘œ ì €ì¥
+
+        card_audio = GetComponent<AudioSource>();            // ì¹´ë“œ ì˜¤ë””ì˜¤ ì†ŒìŠ¤ ì €ì¥
+        cage_audio = cage.GetComponent<AudioSource>();       // ì² ì¥ ì˜¤ë””ì˜¤ ì†ŒìŠ¤ ì €ì¥
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (cage.transform.position.y == pre_position_y + 4.0f)
+        {
+            cage_audio.Stop();
+            StopCoroutine(CageOpen());
+
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Cage") && cage.transform.position.y == pre_position_y)
-        {
-            // Ã¶ÀåÀÇ yÁÂÇ¥°¡ 30ÃÊ µ¿¾È + 4¸¸Å­ ÃµÃµÈ÷ ¿Ã¶ó°¡´Ù°¡ Á¡Á¡ ºü¸£°Ô ¿Ã¶ó°¨ -> Ã¶Àå ¿Ã¶ó°¡´Â ¾Ö´Ï¸ŞÀÌ¼Ç
+        { 
+         // ì² ì¥ì˜ yì¢Œí‘œê°€ 30ì´ˆ ë™ì•ˆ + 4ë§Œí¼ ì²œì²œíˆ ì˜¬ë¼ê°€ë‹¤ê°€ ì ì  ë¹ ë¥´ê²Œ ì˜¬ë¼ê° -> ì² ì¥ ì˜¬ë¼ê°€ëŠ” ì• ë‹ˆë©”ì´ì…˜
             cage.transform.DOMove(new Vector3(cage.transform.position.x, cage.transform.position.y + 4.0f, cage.transform.position.z), 20.0f, false).SetEase(Ease.InQuad);
-        }
+
+            card_audio.Play();       // ì¹´ë“œ ì°ì„ ë•Œ íš¨ê³¼ìŒ ì¬ìƒ(ì‚‘-)
+
+            StartCoroutine(CageOpen());
+
+        } 
+    }
+
+    IEnumerator CageOpen()
+    {
+        yield return new WaitForSeconds(1.0f);
+
+        cage_audio.Play();
     }
 }
