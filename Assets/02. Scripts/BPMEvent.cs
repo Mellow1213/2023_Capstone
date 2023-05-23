@@ -42,7 +42,6 @@ public class BPMEvent : MonoBehaviour
     IEnumerator RestOn()
     {
         isRest = true;
-        RestObjMat.
         FTU.Instance.BPMEvent = 0;
         yield return new WaitForSeconds(REST_TIME);
         isRest = false;
