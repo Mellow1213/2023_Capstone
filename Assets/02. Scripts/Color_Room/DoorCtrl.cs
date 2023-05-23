@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 // 컬러룸 감옥 문 컨트롤 스크립트
 
@@ -23,37 +24,39 @@ public class DoorCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(door_open)
+        {
+            StartCoroutine(DoorOpen());     // 문 열리는 효과음 재생
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (transform.name.Equals("Key_BlueRoom") && other.gameObject.CompareTag("BlueRoom"))   // 키가 파란색이고 키패드의 태그가 파란방이면 문 열 수 있음
+        if (transform.name.Equals("Key_BlueRoom") && other.gameObject.name.Equals("BlueKeypad"))  // 키가 파란색이고 키패드의 태그가 파란방이면 문 열 수 있음
         {
             card_audio.Play();       // 카드 찍을 때 효과음 재생(삑-)
-            StartCoroutine(DoorOpen());     // 문 열 때 효과음 재생 (여는 속도에 따라 다르게 재생 예정 -> 구현 필요)
             door_open = true;   // 잠금 해제 표현한 변수 -> 잠금 해제가 되어야 문 열 수 있음
-            // 당겨서 문 여는 코드 필요
-        } else if(transform.name.Equals("Key_RedRoom") && other.gameObject.CompareTag("RedRoom"))   // 키가 빨간색이고 키패드의 태그가 빨간방이면 문 열 수 있음
+
+        } else if(transform.name.Equals("Key_RedRoom") && other.gameObject.name.Equals("RedKeypad"))   // 키가 빨간색이고 키패드의 태그가 빨간방이면 문 열 수 있음
         {
             card_audio.Play();       // 카드 찍을 때 효과음 재생(삑-)
-            StartCoroutine(DoorOpen());  // 문 열 때 효과음 재생 (여는 속도에 따라 다르게 재생 예정 -> 구현 필요)
             door_open = true;   // 잠금 해제 표현한 변수 -> 잠금 해제가 되어야 문 열 수 있음
-            // 당겨서 문 여는 코드 필요
+
         }
-        else if (transform.name.Equals("Key_GreenRoom") && other.gameObject.CompareTag("YellowRoom"))    // 키가 초록색이고 키패드의 태그가 노란방이면 문 열 수 있음
+        else if (transform.name.Equals("Key_YellowRoom") && other.gameObject.name.Equals("YellowKeypad"))    // 키가 초록색이고 키패드의 태그가 노란방이면 문 열 수 있음
         {
             card_audio.Play();       // 카드 찍을 때 효과음 재생(삑-)
-            StartCoroutine(DoorOpen());  // 문 열 때 효과음 재생 (여는 속도에 따라 다르게 재생 예정 -> 구현 필요)
             door_open = true;   // 잠금 해제 표현한 변수 -> 잠금 해제가 되어야 문 열 수 있음
-            // 당겨서 문 여는 코드 필요
+
         }
     }
 
     IEnumerator DoorOpen()  // 문 열 때 효과음 
     {
-        yield return new WaitForSeconds(1.0f);      // 1초 후에 문 열리는 효과음 재생
+        yield return new WaitForSeconds(1.0f);      // 1초 후에 문 열리는 효과음 재생 & 문 열림
 
         door_audio.Play();      // 문 열리는 효과음 재생
+        door.transform.DORotate(new Vector3(-90.0f, 0.0f, 104.0f), 2.5f).SetEase(Ease.InQuad);  // 감옥 문 열리는 애니메이션
+        door_open = false;      
     }
 }

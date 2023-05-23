@@ -12,9 +12,6 @@ TagManager:
   - SpotLight
   - PointLight
   - Cage
-  - BlueRoom
-  - RedRoom
-  - YellowRoom
   - floor
   layers:
   - Default
