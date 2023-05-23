@@ -22,7 +22,7 @@ public class inwater : MonoBehaviour
     void Update()
     {
         
-        if (transform.position.y <= 387.2f) // water surface에 들어갈 경우
+        if (transform.position.y <= 382f) // water surface에 들어갈 경우
         {
 
             player_inwater = true; // 플레이어가 물속에 있는 걸로 판단
