@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BMPEvent : MonoBehaviour
+public class crBMPEvent : MonoBehaviour
 {
 
     public Material classRoomsky;
@@ -10,6 +10,8 @@ public class BMPEvent : MonoBehaviour
 
     public GameObject[] blood;
     public GameObject sizeUpBlood;
+
+    private int level = 1;
 
     private bool[] isFilled;
 
@@ -30,11 +32,13 @@ public class BMPEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.L)) {
+        if(FTU.Instance.BPMEvent >= level)
+        {//Input.GetKeyDown(KeyCode.L)
             RenderSettings.skybox = classRoomskyChange;
             StartCoroutine(changeColor());
             ActiveBlood();
             sizeUpBlood.transform.localScale *= 1.2f;
+            level++;
         }
     }
 
