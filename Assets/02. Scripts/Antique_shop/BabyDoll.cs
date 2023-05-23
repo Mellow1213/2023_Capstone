@@ -5,7 +5,7 @@ using UnityEngine;
 public class BabyDoll : MonoBehaviour
 {
     public float rotSpeed = 2f;
-    public float movementSpeed = 15f;
+    public float movementSpeed = 400f;
 
     private AudioSource audioSource;
     public AudioClip DroppingDoll;
