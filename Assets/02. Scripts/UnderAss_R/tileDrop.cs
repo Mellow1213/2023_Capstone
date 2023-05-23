@@ -25,7 +25,7 @@ public class tileDrop : MonoBehaviour
             );
         this.transform.position = TargetPos;
 
-        if (Input.GetKeyDown(KeyCode.L) && !sEvent2)//어떠한 심박수에 도달한다면 FTU.Instance.BPMEvent >= 2
+        if (FTU.Instance.BPMEvent >= 2 && !sEvent2)//어떠한 심박수에 도달한다면 FTU.Instance.BPMEvent >= 2
         {
             Debug.Log("work");
          

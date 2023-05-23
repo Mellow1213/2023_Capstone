@@ -4,30 +4,30 @@ using UnityEngine;
 
 public class dropBook : MonoBehaviour
 {
-    //¸Ê¿¡¼­ µÎ¹ø ½ÇÇà. ÇÑ ¹ø ÀÌº¥Æ®°¡ ¹ß»ıÇÑ °÷¿¡¼­´Â ´Ù½Ã´Â ÀÏ¾î³ªÁö ¾ÊÀ½.
+    //ë§µì—ì„œ ë‘ë²ˆ ì‹¤í–‰. í•œ ë²ˆ ì´ë²¤íŠ¸ê°€ ë°œìƒí•œ ê³³ì—ì„œëŠ” ë‹¤ì‹œëŠ” ì¼ì–´ë‚˜ì§€ ì•ŠìŒ.
     public GameObject[] books;
     private Queue<GameObject> queue = new Queue<GameObject>();
     private int cnt = 0;
     private int x, y;
 
-    private void OnTriggerEnter(Collider other)//qÇÃ·¹ÀÌ¾î ¸Ó¸® À§¿¡¼­ Ã¥ ¶³¾îÁö´Â ÀÌº¥Æ®
+    private void OnTriggerEnter(Collider other)//qí”Œë ˆì´ì–´ ë¨¸ë¦¬ ìœ„ì—ì„œ ì±… ë–¨ì–´ì§€ëŠ” ì´ë²¤íŠ¸
     {
         if (other.gameObject.CompareTag("Player") && cnt<3) {
-            y = Random.Range(10, 20);//Ã¥ÀÇ °³¼ö
+            y = Random.Range(10, 20);//ì±…ì˜ ê°œìˆ˜
             Vector3 pos = new Vector3(other.transform.position.x, 12, other.transform.position.z);
             for (int i = 0; i  < y; i++)
             {
-                int x = Random.Range(0, 4);//Ã¥ÀÇ Á¾·ù
-                queue.Enqueue(Instantiate(books[x], pos, Quaternion.identity));//¸Å¹ø »ı¼ºµÇ´Â Ã¥ÀÇ °³¼ö°¡ ´Ù¸£±â ¶§¹®¿¡ queue»ç¿ë
+                x = Random.Range(0, 4);//ì±…ì˜ ì¢…ë¥˜
+                queue.Enqueue(Instantiate(books[x], pos, Quaternion.identity));//ë§¤ë²ˆ ìƒì„±ë˜ëŠ” ì±…ì˜ ê°œìˆ˜ê°€ ë‹¤ë¥´ê¸° ë•Œë¬¸ì— queueì‚¬ìš©
                 StartCoroutine(deleteBooks());
             }
             this.transform.Rotate(0f, 120f, 0f);
         }
     }
-    IEnumerator deleteBooks()//10ÃÊ µÚ »ı¼ºµÈ Ã¥ Clone »èÁ¦
+    IEnumerator deleteBooks()//10ì´ˆ ë’¤ ìƒì„±ëœ ì±… Clone ì‚­ì œ
     {
         cnt++;
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(8);
         while(queue.Count > 0)
             Destroy(queue.Dequeue());
     }

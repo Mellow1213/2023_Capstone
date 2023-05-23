@@ -13,18 +13,18 @@ public class book : MonoBehaviour
     Vector3[] p;
 
     //used, random
-    HashSet<int> exclude = new HashSet<int>();//Áßº¹µÇÁö ¾Êµµ·Ï »ç¿ë
-    float bpm = 0; // ½É¹Ú¼ö
-    int bpmInt = 0;
-    int adf = 5;//Ã¥ÀÌ ³ª°¡´Â ¼Óµµ
+    HashSet<int> exclude = new HashSet<int>();//ì¤‘ë³µë˜ì§€ ì•Šë„ë¡ ì‚¬ìš©
+    int adf = 5;//ì±…ì´ ë‚˜ê°€ëŠ” ì†ë„
+    private bool sEvent1 = false;
 
     private AudioSource audioSource;
     public AudioClip[] clips;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        books = GameObject.FindGameObjectsWithTag("books");// ÅÂ±×¸¦ °ñ¶ó¼­ Ã¥ ¿ÀºêÁ§Æ® ¼öÁı
+        books = GameObject.FindGameObjectsWithTag("books");// íƒœê·¸ë¥¼ ê³¨ë¼ì„œ ì±… ì˜¤ë¸Œì íŠ¸ ìˆ˜ì§‘
         rigid = new Rigidbody[books.Length];
         p = new Vector3[books.Length];
         for (int i = 0; i < books.Length; i++)
@@ -35,7 +35,7 @@ public class book : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    int ExceptRandom() // ·£´ıÇÑ ¼ıÀÚ
+    int ExceptRandom() // ëœë¤í•œ ìˆ«ì
     {
         var range = Enumerable.Range(0, books.Length).Where(i => !exclude.Contains(i));
         var rand = new System.Random();
@@ -43,25 +43,23 @@ public class book : MonoBehaviour
         return range.ElementAt(index);
     }
 
-    void AddForceToBooks() // Ã¥Àå¿¡¼­ Ã¥ ·£´ıÀ¸·Î »ÌÈû.
+    void AddForceToBooks() // ì±…ì¥ì—ì„œ ì±… ëœë¤ìœ¼ë¡œ ë½‘í˜.
     {
         int x = ExceptRandom();
         exclude.Add(x);
         rigid[x].AddForce(-1.0f * adf * p[x], ForceMode.Impulse);
         StartCoroutine(bookSound());
+        StartCoroutine(BookTriggerTrue(x));
     }
 
     // Update is called once per frame
     void Update()
     {
-        bpmInt = (int)(bpm * 10);
-
-        if(bpm > bpm + 10)
+        if (FTU.Instance.BPMEvent >= 1 && !sEvent1)//ì–´ë– í•œ ì‹¬ë°•ìˆ˜ì— ë„ë‹¬í•œë‹¤ë©´ FTU.Instance.BPMEvent >= 2
         {
-            for (int i = 1; i < bpmInt; i++)//¿òÁ÷ÀÏ Ã¥ÀÇ °³¼ö¸¦ ·£´ı°ªÀ» ±¸ÇØ¼­ addforcetoBooks¸¦ ±×¸¸Å­ ¹İº¹
-            {
-                AddForceToBooks();
-            }
+            Debug.Log("work");
+            sEvent1 = true;
+            AddForceToBooks();
         }
     }
 
@@ -72,5 +70,13 @@ public class book : MonoBehaviour
         x = Random.Range(0, 4);
         audioSource.clip = clips[x];
         audioSource.PlayOneShot(audioSource.clip);
+        sEvent1 = false;
+    }
+
+    IEnumerator BookTriggerTrue(int x)
+    {
+        yield return new WaitForSeconds(5);
+        books[x].transform.GetComponent<Rigidbody>().useGravity = false;
+        books[x].transform.GetComponent<Collider>().isTrigger = true;
     }
 }

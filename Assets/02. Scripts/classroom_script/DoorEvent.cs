@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorEvent : MonoBehaviour
-{//ÀÏÁ¤ ¼ÒÀ½ÀÌ ³ÑÀ¸¸é µ¹¾Æ´Ù´Ï´ø °æºñ°¡ »ç¶óÁö°í ¹®À» ¿­·Á°í ¹úÄÀ °Å¸®´Â ÀÌº¥Æ®. 5ÃÊ°£ ÁøÇà
+{//ì¼ì • ì†ŒìŒì´ ë„˜ìœ¼ë©´ ëŒì•„ë‹¤ë‹ˆë˜ ê²½ë¹„ê°€ ì‚¬ë¼ì§€ê³  ë¬¸ì„ ì—´ë ¤ê³  ë²Œì»¥ ê±°ë¦¬ëŠ” ì´ë²¤íŠ¸. 5ì´ˆê°„ ì§„í–‰
     private int num;
     private Animator anim;
     public GameObject[] doors;
@@ -24,11 +24,6 @@ public class DoorEvent : MonoBehaviour
         DoorEvent.instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void DoorEventFunc()
     {
         num = Random.Range(1, 4);
@@ -49,7 +44,7 @@ public class DoorEvent : MonoBehaviour
                 break;
         }
     }
-    IEnumerator activeMonster(int i)//¹® ¾Õ¿¡ ¼­ÀÖ´Â ¸ó½ºÅÍ
+    IEnumerator activeMonster(int i)//ë¬¸ ì•ì— ì„œìˆëŠ” ëª¬ìŠ¤í„°
     {
         monster[i].SetActive(true);
         yield return new WaitForSeconds(6);
@@ -57,7 +52,7 @@ public class DoorEvent : MonoBehaviour
     }
     IEnumerator doorSoundEvent() {
         yield return new WaitForSeconds(0.8f);
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < 6; i++)
         {
             int a = Random.Range(0, 4);
             yield return new WaitForSeconds(0.9f);

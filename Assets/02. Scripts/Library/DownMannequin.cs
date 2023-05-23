@@ -11,21 +11,20 @@ public class DownMannequin : MonoBehaviour
     private bool separate = false;
     public bool DestroyMannequin = false;
 
-    private int Level = 1; //�ɹڼ� ��, 0~1 ���� ���̶�� ����
-
     private AudioSource audioSource;
     public AudioClip clips;
 
     //safe door open
-    private DoorHandler DH;
     public GameObject safe;
+
+    private bool sEvent1 = false;
+    private bool sEvent2 = false;
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = clips;
-        DH = safe.AddComponent<DoorHandler>();
     }
 
     // Update is called once per frame
@@ -35,20 +34,24 @@ public class DownMannequin : MonoBehaviour
         ptPos = new Vector3(playerTarget.transform.position.x, transform.position.y, playerTarget.transform.position.z);
         transform.LookAt(ptPos);
 
-        //�ɹڼ��� ���� ����ŷ�� �Ʒ��� ������
-        if(FTU.Instance.BPMEvent >= 1)//BPM Level (Singleton Instance) 
+
+        if(FTU.Instance.BPMEvent >= 1 && !sEvent1)//BPM Level (Singleton Instance) 
         {
-            audioSource.PlayOneShot(audioSource.clip);
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - (3f * Level), this.transform.position.z);
+            Mannequin(1);
+            StartCoroutine(changeTFforEvent1());
+        }
+        else if (FTU.Instance.BPMEvent >= 2 && !sEvent2)
+        {
+            Mannequin(1.5f);
+            StartCoroutine(changeTFforEvent2());
         }
 
-        if (separate || DH.isOpen)    //safe door open
+        if (separate || FindMemo.instance.isFind)//safe door open
         {
             for (int i = 0; i < transform.childCount; i++)
             {
                 this.transform.GetChild(i).GetComponent<Rigidbody>().useGravity = true;
                 this.transform.GetChild(i).GetComponent<Collider>().isTrigger = false;
-
                 this.transform.GetChild(i).transform.SetParent(null);
             }
         }
@@ -57,10 +60,26 @@ public class DownMannequin : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        //���� ���̿� �����ϸ� ����ŷ ���� ����
         if (other.gameObject.CompareTag("Down"))
         {
             separate = true;
         }
+    }
+
+    void Mannequin(float Level)
+    {
+        audioSource.PlayOneShot(audioSource.clip);
+        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - (3f * Level), this.transform.position.z);
+    }
+
+    IEnumerator changeTFforEvent1()
+    {
+        yield return new WaitForSeconds(15);
+        sEvent1 = false;
+    }
+    IEnumerator changeTFforEvent2()
+    {
+        yield return new WaitForSeconds(30);
+        sEvent2 = false;
     }
 }

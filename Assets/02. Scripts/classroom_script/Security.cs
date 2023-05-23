@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Security : MonoBehaviour
 {
-    //°æºñ°¡ µ¹¾Æ´Ù´Ï´Â ±â´É
+    //ê²½ë¹„ê°€ ëŒì•„ë‹¤ë‹ˆëŠ” ê¸°ëŠ¥
     private int i = 0;
     public GameObject[] patrols;
 
@@ -23,7 +23,7 @@ public class Security : MonoBehaviour
         m_Source.clip = securityFootstep;
         m_Source.Play();
         m_Source.loop = true;
-        m_Source.volume = 0.6f;
+        m_Source.volume = 0.4f;
         Security.instance = this;
     }
 
@@ -53,12 +53,12 @@ public class Security : MonoBehaviour
             i++;
         }
     }
-    public IEnumerator activeSecuity()//ÀÏÁ¤ ¼ÒÀ½ÀÌ ³ÑÀ¸¸é ºÒºû(¼ÕÀüµî ¿ªÇÒ)ÀÌ Àá½Ã ²¨Áü
+    public IEnumerator activeSecuity()//ì¼ì • ì†ŒìŒì´ ë„˜ìœ¼ë©´ ë¶ˆë¹›(ì†ì „ë“± ì—­í• )ì´ ì ì‹œ êº¼ì§
     {
         this.transform.GetChild(0).gameObject.SetActive(false);
         m_Source.volume = 0;
         yield return new WaitForSeconds(6);
         this.transform.GetChild(0).gameObject.SetActive(true);
-        m_Source.volume = 0.6f;
+        m_Source.volume = 0.4f;
     }
 }
