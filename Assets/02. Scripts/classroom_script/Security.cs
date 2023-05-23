@@ -9,42 +9,42 @@ public class Security : MonoBehaviour
     public GameObject[] patrols;
 
     public GameObject player;
-    private lockerOpen LO;
     private float dis;
 
     public AudioClip securityFootstep;
     private AudioSource m_Source;
+
+    public static Security instance;
+
     // Start is called before the first frame update
     void Start()
     {
-        LO = player.GetComponent<lockerOpen>();
         m_Source = GetComponent<AudioSource>();
         m_Source.clip = securityFootstep;
+        m_Source.Play();
+        m_Source.loop = true;
+        m_Source.volume = 0.6f;
+        Security.instance = this;
     }
 
     // Update is called once per frame
     void Update()
     {
         playerDistanceSound();
-        if (LO.DoorEventTrue)
+        if (m_Source.volume != 0)
         {
-            StartCoroutine(activeSecuity());
-        }
-        else
-        {
-            this.transform.position = Vector3.MoveTowards(this.transform.position, patrols[i%2].transform.position, Time.deltaTime * 2);
+            this.transform.position = Vector3.MoveTowards(this.transform.position, patrols[i % 2].transform.position, Time.deltaTime * 2);
         }
     }
 
     private void playerDistanceSound()
     {
-        dis = Vector3.Distance(player.transform.position, this.gameObject.transform.position);
-        m_Source.Play();
-        m_Source.loop = true;
-        if (dis > 20)
-            m_Source.volume -= 0.07f;
+        dis = Vector3.Distance(patrols[i % 2].transform.position, this.gameObject.transform.position);
+        //Debug.Log(dis);
+        if (dis < 15)
+            m_Source.volume -= 0.03f * Time.deltaTime;
         else
-            m_Source.volume += 0.07f;
+            m_Source.volume += 0.03f * Time.deltaTime;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -53,12 +53,12 @@ public class Security : MonoBehaviour
             i++;
         }
     }
-    IEnumerator activeSecuity()//ÀÏÁ¤ ¼ÒÀ½ÀÌ ³ÑÀ¸¸é ºÒºû(¼ÕÀüµî ¿ªÇÒ)ÀÌ Àá½Ã ²¨Áü
+    public IEnumerator activeSecuity()//ÀÏÁ¤ ¼ÒÀ½ÀÌ ³ÑÀ¸¸é ºÒºû(¼ÕÀüµî ¿ªÇÒ)ÀÌ Àá½Ã ²¨Áü
     {
         this.transform.GetChild(0).gameObject.SetActive(false);
-        m_Source.Stop();
+        m_Source.volume = 0;
         yield return new WaitForSeconds(6);
         this.transform.GetChild(0).gameObject.SetActive(true);
-        m_Source.Play();
+        m_Source.volume = 0.6f;
     }
 }

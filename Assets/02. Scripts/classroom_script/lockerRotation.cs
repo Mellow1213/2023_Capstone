@@ -6,87 +6,81 @@ using Debug = UnityEngine.Debug;
 
 public class lockerRotation : MonoBehaviour
 {
-    private float Gauge = 0.3f;
-
-    private GameObject ob;//������ hit�� ����ؼ� ��� object�� �����ߴµ�, ���ŷο��� �׽�Ʈ������ ������ �繰�� ���� ���Ƿ� ������.
-
-    //private OVRPlayerCtrl playerCtrl;
-    public GameObject player;
-
-    public AudioClip doorSound;
-    private AudioSource audioSource;
+    private float Gauge = 0.25f;
 
     //Angular Velocity, ��α� ����
     Quaternion previousRotation; //�� �������� �����̼� ��
     Vector3 angularVelocity; //���ӵ��� ������ ����
     Vector3 speed;
 
-    public bool DoorEventTrue = false;
 
-    private bool opening = false;
+    private Quaternion pastRotation, currentRotation;
+    private bool isRotate = false;
 
     public Vector3 GetPedestrianAngularVelocity()//�� �ӵ��� ���ϴ� �Լ�
     {
-        Quaternion deltaRotation = ob.transform.rotation * Quaternion.Inverse(previousRotation);
+        Quaternion deltaRotation = this.transform.rotation * Quaternion.Inverse(previousRotation);
 
-        previousRotation = ob.transform.rotation;
+        previousRotation = this.transform.rotation;
 
         deltaRotation.ToAngleAxis(out var angle, out var axis);
 
-        //�������� �������� ��ȯ
         angle *= Mathf.Deg2Rad;
 
         angularVelocity = (1.0f / Time.deltaTime) * angle * axis;
 
-        //���ӵ� ��ȯ
         return angularVelocity;
     }
     // Start is called before the first frame update
     void Start()
     {
-        //playerCtrl = player.GetComponent<OVRPlayerCtrl>();
-        audioSource = this.GetComponent<AudioSource>();
-        audioSource.clip = doorSound;
-        audioSource.loop = true;
+        pastRotation = this.transform.rotation;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //audioSource.Play();
-
-        if (opening)
+        currentRotation = this.transform.rotation;
+        if(currentRotation != pastRotation)
         {
-            speed = GetPedestrianAngularVelocity();
-            Debug.Log("speed : " + speed);
-            Gauge += Time.deltaTime * speed.magnitude; //���ӵ��� �� ����(����) ũ��
-            audioSource.volume = Gauge;
+            isRotate = true;
+        }
+        else
+        {
+            isRotate = false;
+        }
+        isRotation();
+    }
 
-            if (Gauge > 0.7)
-            {
-                //���ε��� �Ҹ�, �ִϸ��̼� ����
-                DoorEventTrue = true;
-                Gauge = 0.3f;
-                Debug.Log("good");
-            }
+    private void isRotation()
+    {
+        if (isRotate)
+        {
+            StartCoroutine(curRotation());
         }
         else
         {
             Gauge = 0.3f;
         }
     }
-
-    private void OnTriggerStay(Collider other)
+    IEnumerator curRotation()
     {
-        if (other.gameObject.CompareTag("handle"))//if (other.gameObject.CompareTag("handle") && playerCtrl.down)//���̽�ƽ�� ��� ���� ��
+        speed = GetPedestrianAngularVelocity();
+        //Debug.Log("speed : " + speed);
+        Gauge += 0.008f * speed.magnitude; //���ӵ��� �� ����(����) ũ��
+        Debug.Log("Gauge : " + Gauge);
+        if (Gauge > 0.6f)
         {
-            Debug.Log("touch");
-            opening = true;
-            ob = other.transform.parent.gameObject;
+            //���ε��� �Ҹ�, �ִϸ��̼� ����
+            LockerOpenSound.instance.PlayOpenSound();
+            DoorEvent.instance.DoorEventFunc();
+            StartCoroutine(Security.instance.activeSecuity());
+            Gauge = 0.25f;
+            //Debug.Log("good");
         }
-        else
-        {
-            opening = false;
-        }
+
+        yield return new WaitForSeconds(2);
+        pastRotation = currentRotation;
     }
+
 }
