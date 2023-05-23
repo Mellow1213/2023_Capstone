@@ -46,6 +46,8 @@ public class FTU : MonoBehaviour // Firebase to Unity
         database.ValueChanged += HandleValueChanged; // 데이터가 변경될 때마다 읽음
     }
 
+    public int BPMEvent = 0;
+
     private string bpmValue;
     private string[] bpmValues;
 

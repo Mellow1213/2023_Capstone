@@ -11,7 +11,7 @@ public class DownMannequin : MonoBehaviour
     private bool separate = false;
     public bool DestroyMannequin = false;
 
-    private int Level = 1; //½É¹Ú¼ö °ª, 0~1 »çÀÌ °ªÀÌ¶ó°í ÃßÃø
+    private int Level = 1; //ï¿½É¹Ú¼ï¿½ ï¿½ï¿½, 0~1 ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¶ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     private AudioSource audioSource;
     public AudioClip clips;
@@ -31,12 +31,12 @@ public class DownMannequin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //player ¹æÇâÀ¸·Î ¸¶³×Å· È¸Àü
+        //player ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å· È¸ï¿½ï¿½
         ptPos = new Vector3(playerTarget.transform.position.x, transform.position.y, playerTarget.transform.position.z);
         transform.LookAt(ptPos);
 
-        //½É¹Ú¼ö¿¡ µû¶ó ¸¶³×Å·ÀÌ ¾Æ·¡·Î ³»·Á¿È
-        if(Input.GetMouseButtonDown(0))//½É¹Ú¼ö ÀÌº¥Æ®
+        //ï¿½É¹Ú¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å·ï¿½ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        if(FTU.Instance.BPMEvent >= 1)//BPM Level (Singleton Instance) 
         {
             audioSource.PlayOneShot(audioSource.clip);
             this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - (3f * Level), this.transform.position.z);
@@ -57,7 +57,7 @@ public class DownMannequin : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        //ÀÏÁ¤ ³ôÀÌ¿¡ µµ´ÞÇÏ¸é ¸¶³×Å· °øÁß ºÐÇØ
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½Å· ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (other.gameObject.CompareTag("Down"))
         {
             separate = true;
