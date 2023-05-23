@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class BPMEvent : MonoBehaviour
 {
@@ -16,19 +17,24 @@ public class BPMEvent : MonoBehaviour
     private const float REST_TIME = 30;
 
     private bool isRest = false;
-    
+
+    public GameObject RestObject;
+    private Material RestObjMat;
+
     // Start is called before the first frame update
     void Start()
     {
         bpm = 0;
         if (average_bpm == 0)
             average_bpm = 85.0f;
+
+        RestObjMat = GetComponent<Material>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        bpm = float.Parse(FTU.Instance.GetBpmValues(0));
+        //bpm = float.Parse(FTU.Instance.GetBpmValues(0));
         
         BPMLevel();   
     }
@@ -36,6 +42,7 @@ public class BPMEvent : MonoBehaviour
     IEnumerator RestOn()
     {
         isRest = true;
+        RestObjMat.
         FTU.Instance.BPMEvent = 0;
         yield return new WaitForSeconds(REST_TIME);
         isRest = false;
