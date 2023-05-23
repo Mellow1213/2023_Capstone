@@ -9,6 +9,12 @@ TagManager:
   - buttons
   - Down
   - books
+  - SpotLight
+  - PointLight
+  - Cage
+  - BlueRoom
+  - RedRoom
+  - YellowRoom
   - floor
   layers:
   - Default

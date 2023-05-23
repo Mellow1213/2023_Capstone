@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class player_move : MonoBehaviour
 {
-    public float turnSpeed = 4.0f; // ¸¶¿ì½º È¸Àü ¼Óµµ
-    public float moveSpeed = 2.0f; // ÀÌµ¿ ¼Óµµ
+    public float turnSpeed = 4.0f; // ë§ˆìš°ìŠ¤ íšŒì „ ì†ë„
+    public float moveSpeed = 2.0f; // ì´ë™ ì†ë„
 
-    private float xRotate = 0.0f; // ³»ºÎ »ç¿ëÇÒ XÃà È¸Àü·®Àº º°µµ Á¤ÀÇ ( Ä«¸Þ¶ó À§ ¾Æ·¡ ¹æÇâ )
+    private float xRotate = 0.0f; // ë‚´ë¶€ ì‚¬ìš©í•  Xì¶• íšŒì „ëŸ‰ì€ ë³„ë„ ì •ì˜ ( ì¹´ë©”ë¼ ìœ„ ì•„ëž˜ ë°©í–¥ )
 
     void Update()
     {
@@ -15,34 +15,34 @@ public class player_move : MonoBehaviour
         KeyboardMove();
     }
 
-    // ¸¶¿ì½ºÀÇ ¿òÁ÷ÀÓ¿¡ µû¶ó Ä«¸Þ¶ó¸¦ È¸Àü ½ÃÅ²´Ù.
+    // ë§ˆìš°ìŠ¤ì˜ ì›€ì§ìž„ì— ë”°ë¼ ì¹´ë©”ë¼ë¥¼ íšŒì „ ì‹œí‚¨ë‹¤.
     void MouseRotation()
     {
-        // ÁÂ¿ì·Î ¿òÁ÷ÀÎ ¸¶¿ì½ºÀÇ ÀÌµ¿·® * ¼Óµµ¿¡ µû¶ó Ä«¸Þ¶ó°¡ ÁÂ¿ì·Î È¸ÀüÇÒ ¾ç °è»ê
+        // ì¢Œìš°ë¡œ ì›€ì§ì¸ ë§ˆìš°ìŠ¤ì˜ ì´ë™ëŸ‰ * ì†ë„ì— ë”°ë¼ ì¹´ë©”ë¼ê°€ ì¢Œìš°ë¡œ íšŒì „í•  ì–‘ ê³„ì‚°
         float yRotateSize = Input.GetAxis("Mouse X") * turnSpeed;
-        // ÇöÀç yÃà È¸Àü°ª¿¡ ´õÇÑ »õ·Î¿î È¸Àü°¢µµ °è»ê
+        // í˜„ìž¬ yì¶• íšŒì „ê°’ì— ë”í•œ ìƒˆë¡œìš´ íšŒì „ê°ë„ ê³„ì‚°
         float yRotate = transform.eulerAngles.y + yRotateSize;
 
-        // À§¾Æ·¡·Î ¿òÁ÷ÀÎ ¸¶¿ì½ºÀÇ ÀÌµ¿·® * ¼Óµµ¿¡ µû¶ó Ä«¸Þ¶ó°¡ È¸ÀüÇÒ ¾ç °è»ê(ÇÏ´Ã, ¹Ù´ÚÀ» ¹Ù¶óº¸´Â µ¿ÀÛ)
+        // ìœ„ì•„ëž˜ë¡œ ì›€ì§ì¸ ë§ˆìš°ìŠ¤ì˜ ì´ë™ëŸ‰ * ì†ë„ì— ë”°ë¼ ì¹´ë©”ë¼ê°€ íšŒì „í•  ì–‘ ê³„ì‚°(í•˜ëŠ˜, ë°”ë‹¥ì„ ë°”ë¼ë³´ëŠ” ë™ìž‘)
         float xRotateSize = -Input.GetAxis("Mouse Y") * turnSpeed;
-        // À§¾Æ·¡ È¸Àü·®À» ´õÇØÁÖÁö¸¸ -45µµ ~ 80µµ·Î Á¦ÇÑ (-45:ÇÏ´Ã¹æÇâ, 80:¹Ù´Ú¹æÇâ)
-        // Clamp ´Â °ªÀÇ ¹üÀ§¸¦ Á¦ÇÑÇÏ´Â ÇÔ¼ö
+        // ìœ„ì•„ëž˜ íšŒì „ëŸ‰ì„ ë”í•´ì£¼ì§€ë§Œ -45ë„ ~ 80ë„ë¡œ ì œí•œ (-45:í•˜ëŠ˜ë°©í–¥, 80:ë°”ë‹¥ë°©í–¥)
+        // Clamp ëŠ” ê°’ì˜ ë²”ìœ„ë¥¼ ì œí•œí•˜ëŠ” í•¨ìˆ˜
         xRotate = Mathf.Clamp(xRotate + xRotateSize, -45, 80);
 
-        // Ä«¸Þ¶ó È¸Àü·®À» Ä«¸Þ¶ó¿¡ ¹Ý¿µ(X, YÃà¸¸ È¸Àü)
+        // ì¹´ë©”ë¼ íšŒì „ëŸ‰ì„ ì¹´ë©”ë¼ì— ë°˜ì˜(X, Yì¶•ë§Œ íšŒì „)
         transform.eulerAngles = new Vector3(xRotate, yRotate, 0);
     }
 
-    // Å°º¸µåÀÇ ´­¸²¿¡ µû¶ó ÀÌµ¿
+    // í‚¤ë³´ë“œì˜ ëˆŒë¦¼ì— ë”°ë¼ ì´ë™
     void KeyboardMove()
     {
-        // WASD Å° ¶Ç´Â È­»ìÇ¥Å°ÀÇ ÀÌµ¿·®À» ÃøÁ¤
+        // WASD í‚¤ ë˜ëŠ” í™”ì‚´í‘œí‚¤ì˜ ì´ë™ëŸ‰ì„ ì¸¡ì •
         Vector3 dir = new Vector3(
             Input.GetAxis("Horizontal"),
             0,
             Input.GetAxis("Vertical")
         );
-        // ÀÌµ¿¹æÇâ * ¼Óµµ * ÇÁ·¹ÀÓ´ÜÀ§ ½Ã°£À» °öÇØ¼­ Ä«¸Þ¶óÀÇ Æ®·£½ºÆûÀ» ÀÌµ¿
+        // ì´ë™ë°©í–¥ * ì†ë„ * í”„ë ˆìž„ë‹¨ìœ„ ì‹œê°„ì„ ê³±í•´ì„œ ì¹´ë©”ë¼ì˜ íŠ¸ëžœìŠ¤í¼ì„ ì´ë™
         transform.Translate(dir * moveSpeed * Time.deltaTime);
     }
   
