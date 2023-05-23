@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1db58fa6-dd38-4712-9332-597a6543c734" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/01. Scenes/Debugging_Map.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scenes/Debugging_Map.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01. Scenes/underass.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scenes/underass.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Prefabs/Player.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Prefabs/Player.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02. Scripts/BPMEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Scripts/BPMEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02. Scripts/Library/DownMannequin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Scripts/Library/DownMannequin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03. Materials/UNDER_001.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03. Materials/classroomVillain.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03. Materials/footstep.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03. Materials/forest.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03. Materials/prototype_elevator.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/98. Firebase/FTU.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/98. Firebase/FTU.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asset/SkinlessZombie/Art/Textures/Built-In/builtIn.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asset/SkinlessZombie/Art/Textures/URP/URP.unitypackage.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +114,7 @@
       <workItem from="1682324635901" duration="6000" />
       <workItem from="1683514262544" duration="1826000" />
       <workItem from="1683607322037" duration="5029000" />
+      <workItem from="1684819307390" duration="390000" />
     </task>
     <servers />
   </component>

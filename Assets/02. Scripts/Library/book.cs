@@ -56,9 +56,12 @@ public class book : MonoBehaviour
     {
         bpmInt = (int)(bpm * 10);
 
-        for (int i = 1; i < bpmInt; i++)//움직일 책의 개수를 랜덤값을 구해서 addforcetoBooks를 그만큼 반복
+        if(bpm > bpm + 10)
         {
-            AddForceToBooks();
+            for (int i = 1; i < bpmInt; i++)//움직일 책의 개수를 랜덤값을 구해서 addforcetoBooks를 그만큼 반복
+            {
+                AddForceToBooks();
+            }
         }
     }
 
