@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class art_tears : MonoBehaviour
 {
-    public Material[] artmat = new Material[4]; //¹Ù²Ü material ¹è¿­
+    public Material[] artmat = new Material[4]; //ë°”ê¿€ material ë°°ì—´
 
     int i = 0;
 
     void Update()
     {
-        if (Input.GetKeyDown("j")) //'j' ÀÔ·Â(= ½É¹Ú¼ö°¡ ³ô¾ÆÁú ¶§)
+        if (Input.GetKeyDown("j")) //'j' ì…ë ¥(= ì‹¬ë°•ìˆ˜ê°€ ë†’ì•„ì§ˆ ë•Œ)
         {
-            i += 1; //´Ü°è¿¡ µû¶ó iÁõ°¡
+            i += 1; //ë‹¨ê³„ì— ë”°ë¼ iì¦ê°€
             Renderer renderer = GetComponent<Renderer>();
             Material[] materials = renderer.materials;
-            materials[1] = artmat[i]; // µÎ ¹øÂ° MaterialÀ» »õ·Î¿î Material·Î º¯°æ (Ã¹ ¹øÂ° = ¾×ÀÚ material)
+            materials[1] = artmat[i]; // ë‘ ë²ˆì§¸ Materialì„ ìƒˆë¡œìš´ Materialë¡œ ë³€ê²½ (ì²« ë²ˆì§¸ = ì•¡ì material)
             renderer.materials = materials;
         }
     }

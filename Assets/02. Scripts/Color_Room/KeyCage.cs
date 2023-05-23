@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-// 철장 문 여는 스크립트
+// 컬러룸 철장 문 여는 스크립트
 
 public class KeyCage : MonoBehaviour
 {
