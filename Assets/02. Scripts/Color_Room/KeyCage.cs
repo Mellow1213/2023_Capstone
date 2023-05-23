@@ -25,10 +25,10 @@ public class KeyCage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cage.transform.position.y == pre_position_y + 4.0f)
+        if (cage.transform.position.y == pre_position_y + 4.0f) // 철장이 다 올라가면 효과음 정지
         {
-            cage_audio.Stop();
-            StopCoroutine(CageOpen());
+            cage_audio.Stop();      // 효과음 정지
+            StopCoroutine(CageOpen());  // 코루틴 정지
 
         }
     }
@@ -42,15 +42,15 @@ public class KeyCage : MonoBehaviour
 
             card_audio.Play();       // 카드 찍을 때 효과음 재생(삑-)
 
-            StartCoroutine(CageOpen());
+            StartCoroutine(CageOpen());     // 철장 올라가는 효과음 재생
 
         } 
     }
 
-    IEnumerator CageOpen()
+    IEnumerator CageOpen()  // 철장 올라가는 효과음 재생 코루틴
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1.0f);  // 1초 후에 철장 올라가는 효과음 재생
 
-        cage_audio.Play();
+        cage_audio.Play();      // 철장 올라가는 효과음 재생
     }
 }

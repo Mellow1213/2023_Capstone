@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class DoorCtrl : MonoBehaviour
 {
-    private bool door_open;
+    private bool door_open;               // 잠금 해제 표현하는 변수
     public GameObject door;               // 문 오브젝트
 
     private AudioSource card_audio;       // 카드 찍을 때 효과음
@@ -15,7 +15,7 @@ public class DoorCtrl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        door_open = false;
+        door_open = false;              // 문 잠겨있음
         card_audio = GetComponent<AudioSource>();            // 카드 오디오 소스 저장
         door_audio = door.GetComponent<AudioSource>();       // 문 오디오 소스 저장
     }
@@ -31,29 +31,29 @@ public class DoorCtrl : MonoBehaviour
         if (transform.name.Equals("Key_BlueRoom") && other.gameObject.CompareTag("BlueRoom"))   // 키가 파란색이고 키패드의 태그가 파란방이면 문 열 수 있음
         {
             card_audio.Play();       // 카드 찍을 때 효과음 재생(삑-)
-            StartCoroutine(DoorOpen());
-            door_open = true;
+            StartCoroutine(DoorOpen());     // 문 열 때 효과음 재생 (여는 속도에 따라 다르게 재생 예정 -> 구현 필요)
+            door_open = true;   // 잠금 해제 표현한 변수 -> 잠금 해제가 되어야 문 열 수 있음
             // 당겨서 문 여는 코드 필요
         } else if(transform.name.Equals("Key_RedRoom") && other.gameObject.CompareTag("RedRoom"))   // 키가 빨간색이고 키패드의 태그가 빨간방이면 문 열 수 있음
         {
             card_audio.Play();       // 카드 찍을 때 효과음 재생(삑-)
-            StartCoroutine(DoorOpen());
-            door_open = true;
+            StartCoroutine(DoorOpen());  // 문 열 때 효과음 재생 (여는 속도에 따라 다르게 재생 예정 -> 구현 필요)
+            door_open = true;   // 잠금 해제 표현한 변수 -> 잠금 해제가 되어야 문 열 수 있음
             // 당겨서 문 여는 코드 필요
         }
         else if (transform.name.Equals("Key_GreenRoom") && other.gameObject.CompareTag("YellowRoom"))    // 키가 초록색이고 키패드의 태그가 노란방이면 문 열 수 있음
         {
             card_audio.Play();       // 카드 찍을 때 효과음 재생(삑-)
-            StartCoroutine(DoorOpen());
-            door_open = true;
+            StartCoroutine(DoorOpen());  // 문 열 때 효과음 재생 (여는 속도에 따라 다르게 재생 예정 -> 구현 필요)
+            door_open = true;   // 잠금 해제 표현한 변수 -> 잠금 해제가 되어야 문 열 수 있음
             // 당겨서 문 여는 코드 필요
         }
     }
 
-    IEnumerator DoorOpen()
+    IEnumerator DoorOpen()  // 문 열 때 효과음 
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1.0f);      // 1초 후에 문 열리는 효과음 재생
 
-        door_audio.Play();
+        door_audio.Play();      // 문 열리는 효과음 재생
     }
 }

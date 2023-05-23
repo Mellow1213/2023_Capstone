@@ -30,9 +30,9 @@ public class LightCtrl : MonoBehaviour
     void Update()
     {
 
-        // light 어두워지는 스크립트
+        // light 어두워지는 스크립트 -> 심박수 이벤트 2단계
 
-        if(Input.GetKeyDown(KeyCode.Q))         // 키보드에서 Q 누르면
+        if (Input.GetKeyDown(KeyCode.Q))         // 키보드에서 Q 누르면 
         {
             foreach(GameObject light in spot_lights)    
             {
@@ -46,7 +46,7 @@ public class LightCtrl : MonoBehaviour
         }
 
 
-        // light 깜빡거리는 스크립트
+        // light 깜빡거리는 스크립트 -> 심박수 이벤트 1단계
        
          if(Mathf.Abs(spot_targetIntensity - spot_currentIntensity) >= 0.01)        // spot light의 타겟 intensity에서 현재 intensity를 뺀 값의 절대값이 0.01보다 크거나 같으면
          {
