@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1db58fa6-dd38-4712-9332-597a6543c734" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01. Scenes/Debugging_Map.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scenes/Debugging_Map.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02. Scripts/BPMEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Scripts/BPMEvent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/03. Materials/Loading.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03. Materials/Loading.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/03. Materials/Loading.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03. Materials/Loading.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/03. Materials/Mat_Red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03. Materials/Mat_Red.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Images.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/05. Images.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asset/NanumGothic SDF.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset/NanumGothic SDF.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asset/NanumSquareRoundL SDF.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset/NanumSquareRoundL SDF.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

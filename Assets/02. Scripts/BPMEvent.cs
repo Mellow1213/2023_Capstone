@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Unity.VisualScripting;
 
 public class BPMEvent : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class BPMEvent : MonoBehaviour
     private const float SECOND_TRUMPET = 1.12f;
     private const float THIRD_TRUMPET = 1.2f;
     private const float BPMSYSDOWN = 1.26f;
-    private const float REST_TIME = 30;
+    private const float REST_TIME = 3;
 
     private bool isRest = false;
 
@@ -28,7 +29,7 @@ public class BPMEvent : MonoBehaviour
         if (average_bpm == 0)
             average_bpm = 85.0f;
 
-        RestObjMat = GetComponent<Material>();
+        RestObjMat = RestObject.GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
@@ -42,8 +43,13 @@ public class BPMEvent : MonoBehaviour
     IEnumerator RestOn()
     {
         isRest = true;
+        RestObject.SetActive(true);
+        RestObjMat.DOFade(1, 2);
         FTU.Instance.BPMEvent = 0;
         yield return new WaitForSeconds(REST_TIME);
+        RestObjMat.DOFade(0, 2);
+        yield return new WaitForSeconds(2);
+        RestObject.SetActive(false);
         isRest = false;
     }
     void BPMLevel()
