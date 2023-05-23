@@ -16,6 +16,7 @@ TagManager:
   - RedRoom
   - YellowRoom
   - floor
+  - ground
   layers:
   - Default
   - TransparentFX
