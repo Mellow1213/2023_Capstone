@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1db58fa6-dd38-4712-9332-597a6543c734" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01. Scenes/ColorRoom.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scenes/ColorRoom.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01. Scenes/Debugging_Map.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scenes/Debugging_Map.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02. Scripts/BPMEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Scripts/BPMEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02. Scripts/Color_Room/LightCtrl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Scripts/Color_Room/LightCtrl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02. Scripts/Controller/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Scripts/Controller/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Deep_Sea/AssetStore/_Corals2/Materials/CoralsRocks.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Deep_Sea/AssetStore/_Corals2/Materials/CoralsRocks.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Deep_Sea/AssetStore/_Corals2/Materials/Seaweeds.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Deep_Sea/AssetStore/_Corals2/Materials/Seaweeds.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Deep_Sea/Scene/DeepSea.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Deep_Sea/Scene/DeepSea.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
