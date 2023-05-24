@@ -35,7 +35,7 @@ public class KeyCage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Cage") && cage.transform.position.y == pre_position_y)
+        if(other.CompareTag("Cage"))
         { 
          // 철장의 y좌표가 30초 동안 + 4만큼 천천히 올라가다가 점점 빠르게 올라감 -> 철장 올라가는 애니메이션
             cage.transform.DOMove(new Vector3(cage.transform.position.x, cage.transform.position.y + 4.0f, cage.transform.position.z), 20.0f, false).SetEase(Ease.InQuad);
@@ -51,6 +51,7 @@ public class KeyCage : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);  // 1초 후에 철장 올라가는 효과음 재생
 
+        gameObject.SetActive(false);        // 카드 사용하면 없어짐
         cage_audio.Play();      // 철장 올라가는 효과음 재생
     }
 }

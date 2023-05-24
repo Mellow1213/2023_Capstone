@@ -36,7 +36,6 @@ public class BPMEvent : MonoBehaviour
     void Update()
     {
         //bpm = float.Parse(FTU.Instance.GetBpmValues(0));
-        
         BPMLevel();   
     }
 
