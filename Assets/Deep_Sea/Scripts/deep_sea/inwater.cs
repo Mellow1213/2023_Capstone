@@ -10,23 +10,25 @@ public class inwater : MonoBehaviour
     public AudioClip audioClipsea; //바다 파도 소리
     public AudioClip audioClipbpm;
     public Animation bpmeffect;
+    public Transform player;
 
     void Start()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
-        player_rb = GetComponent<Rigidbody>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player_rb = player.GetComponent<Rigidbody>();
         audioSource.clip = audioClipsea;
         audioSource.Play();
     }
 
     void Update()
     {
-        
-        if (transform.position.y <= 382f) // water surface에 들어갈 경우
+
+        if (player.position.y <= 387.2f) // water surface에 들어갈 경우
         {
 
             player_inwater = true; // 플레이어가 물속에 있는 걸로 판단
-            
+
         }
         else
         {
@@ -42,12 +44,12 @@ public class inwater : MonoBehaviour
             if (Input.GetKeyDown("h")) // 특정 심박수에 다다를 경우
             {
                 bpmeffect.Play(); // 화면 깜빡임 애니메이션
-                
+
                 audioSource.Play();
             }
 
         }
-        
+
 
     }
 
