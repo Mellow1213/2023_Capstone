@@ -1258,7 +1258,7 @@ MonoBehaviour:
   renderModels: []
   mainRenderModel: {fileID: 0}
   hoverhighlightRenderModel: {fileID: 0}
-  showDebugText: 1
+  showDebugText: 0
   spewDebugText: 0
   showDebugInteractables: 0
 --- !u!114 &2105594879314639027
@@ -2011,7 +2011,7 @@ MonoBehaviour:
   renderModels: []
   mainRenderModel: {fileID: 0}
   hoverhighlightRenderModel: {fileID: 0}
-  showDebugText: 1
+  showDebugText: 0
   spewDebugText: 0
   showDebugInteractables: 0
 --- !u!114 &2751217371249250251

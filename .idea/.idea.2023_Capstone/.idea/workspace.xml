@@ -2,10 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1db58fa6-dd38-4712-9332-597a6543c734" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/02. Scripts/Controller/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Scripts/Controller/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Deep_Sea/AssetStore/_Corals2/Materials/CoralsRocks.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Deep_Sea/AssetStore/_Corals2/Materials/CoralsRocks.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Deep_Sea/AssetStore/_Corals2/Materials/Seaweeds.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Deep_Sea/AssetStore/_Corals2/Materials/Seaweeds.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Deep_Sea/Scene/DeepSea.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Deep_Sea/Scene/DeepSea.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01. Scenes/antique.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scenes/antique.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02. Scripts/Antique_shop/BabyDoll.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Scripts/Antique_shop/BabyDoll.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02. Scripts/Antique_shop/art_tears.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Scripts/Antique_shop/art_tears.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02. Scripts/BPMEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Scripts/BPMEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03. Materials/Loading.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03. Materials/Loading.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Prefabs/GameObject (1).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Prefabs/GameObject (1).prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asset/Antique_shop/whiskey-and-wine-low-poly-bottles/textures/T_whiskey1_N.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset/Antique_shop/whiskey-and-wine-low-poly-bottles/textures/T_whiskey1_N.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asset/Antique_shop/whiskey-and-wine-low-poly-bottles/textures/T_whiskey_N.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset/Antique_shop/whiskey-and-wine-low-poly-bottles/textures/T_whiskey_N.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asset/Antique_shop/whiskey-and-wine-low-poly-bottles/textures/T_wine_N.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset/Antique_shop/whiskey-and-wine-low-poly-bottles/textures/T_wine_N.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asset/Elevator/BrossLab/Simple Elevator/Material/Button Transparent.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset/Elevator/BrossLab/Simple Elevator/Material/Button Transparent.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asset/Elevator/BrossLab/Simple Elevator/Material/Light 01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset/Elevator/BrossLab/Simple Elevator/Material/Light 01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asset/NanumSquareRoundL SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset/NanumSquareRoundL SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/antique_volume.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/antique_volume.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/saves/test.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/saves/test.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +33,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/02. Scripts/Library/FindMemo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/02. Scripts/Library/drop_sound.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ElevatorDoor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/mannequin_surprise.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../My project (3)/Assets/DemoArduino.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
