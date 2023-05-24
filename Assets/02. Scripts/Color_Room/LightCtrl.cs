@@ -32,17 +32,17 @@ public class LightCtrl : MonoBehaviour
         // light 깜빡거리는 스크립트 -> 심박수 이벤트 1단계
         if (FTU.Instance.BPMEvent == 1)
         {
-            
-            if(Mathf.Abs(spot_targetIntensity - spot_currentIntensity) >= 0.01)        // spot light의 타겟 intensity에서 현재 intensity를 뺀 값의 절대값이 0.01보다 크거나 같으면
+
+            if (Mathf.Abs(spot_targetIntensity - spot_currentIntensity) >= 0.01)        // spot light의 타겟 intensity에서 현재 intensity를 뺀 값의 절대값이 0.01보다 크거나 같으면
             {
-                if (spot_targetIntensity - spot_currentIntensity >= 0)                 
+                if (spot_targetIntensity - spot_currentIntensity >= 0)
                 {
-                    spot_currentIntensity += Time.deltaTime * 50f;                      
+                    spot_currentIntensity += Time.deltaTime * 100f;
                     point_currentIntensity = spot_currentIntensity / 100.0f;            // point light의 intensity는 spot light의 intensity에서 100 나눈 값
                 }
                 else
                 {
-                    spot_currentIntensity -= Time.deltaTime * 50f;
+                    spot_currentIntensity -= Time.deltaTime * 100f;
                     point_currentIntensity = spot_currentIntensity / 100.0f;            // point light의 intensity는 spot light의 intensity에서 100 나눈 값
                 }
 
@@ -62,25 +62,37 @@ public class LightCtrl : MonoBehaviour
             {
                 spot_targetIntensity = Random.Range(0.0f, 10.0f);                       // spot light의 타겟 intensity는 0~50중 랜덤으로 저장
             }
-            
+
         } // light 어두워지는 스크립트 -> 심박수 이벤트 2단계
 
-        else if (FTU.Instance.BPMEvent == 2)         
+        else if (FTU.Instance.BPMEvent == 2)
         {
-            foreach(GameObject light in spot_lights)    
+            foreach (GameObject light in spot_lights)
             {
                 light.GetComponent<Light>().intensity = 5;   // spot light의 intensity 10으로 변경 -> 어두워짐
-                light.GetComponent<Light>().color = Color.red;
+                light.GetComponent<Light>().color = Color.red;      // 불빛 색상 빨간색으로 변경
             }
 
             foreach (GameObject light in point_lights)
             {
                 light.GetComponent<Light>().intensity = 0.03f;           // point light의 intensity 0.1으로 변경 -> 어두워짐
-                light.GetComponent<Light>().color = Color.red;
+                light.GetComponent<Light>().color = Color.red;            // 불빛 색상 빨간색으로 변경
             }
         }
+        else if (FTU.Instance.BPMEvent == 0)
+        {
+            foreach (GameObject light in spot_lights)
+            {
+                light.GetComponent<Light>().intensity = 50.0f;   // spot light의 intensity 원래 상태로
+                light.GetComponent<Light>().color = Color.white;    // 불빛 색상 흰색으로 변경
+            }
 
-        
-        
+            foreach (GameObject light in point_lights)
+            {
+                light.GetComponent<Light>().intensity = 1.0f;           // point light의 intensity 원래 상태로
+                light.GetComponent<Light>().color = Color.white;        // 불빛 색상 흰색으로 변경
+            }
+
+        }
     }
 }
