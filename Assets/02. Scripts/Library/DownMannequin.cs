@@ -7,12 +7,12 @@ using static UnityEngine.GraphicsBuffer;
 public class DownMannequin : MonoBehaviour
 {
     public GameObject playerTarget;
+    public GameObject memo;
+    private FindMemo FM;
+
     private Vector3 ptPos = Vector3.zero;
     private bool separate = false;
     public bool DestroyMannequin = false;
-
-    private AudioSource audioSource;
-    public AudioClip clips;
 
     //safe door open
     public GameObject safe;
@@ -20,11 +20,11 @@ public class DownMannequin : MonoBehaviour
     private bool sEvent1 = false;
     private bool sEvent2 = false;
 
+    
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        audioSource.clip = clips;
+        FM = memo.GetComponent<FindMemo>();
     }
 
     // Update is called once per frame
@@ -46,7 +46,7 @@ public class DownMannequin : MonoBehaviour
             StartCoroutine(changeTFforEvent2());
         }
 
-        if (separate || FindMemo.instance.isFind)//safe door open
+        if (separate || FM.isFind)//safe door open
         {
             for (int i = 0; i < transform.childCount; i++)
             {
@@ -68,7 +68,6 @@ public class DownMannequin : MonoBehaviour
 
     void Mannequin(float Level)
     {
-        audioSource.PlayOneShot(audioSource.clip);
         this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - (3f * Level), this.transform.position.z);
     }
 

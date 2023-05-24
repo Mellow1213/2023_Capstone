@@ -15,7 +15,7 @@ public class LockerOpenSound : MonoBehaviour
         LockerOpenSound.instance = this;
         audioSource = this.GetComponent<AudioSource>();
         audioSource.clip = lockerSound;
-        audioSource.volume = 0.65f;
+        audioSource.volume = 0.9f;
     }
 
     // Update is called once per frame
