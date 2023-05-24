@@ -36,6 +36,7 @@ public class DoorCtrl : MonoBehaviour
         {
             card_audio.Play();       // 카드 찍을 때 효과음 재생(삑-)
             door_open = true;   // 잠금 해제 표현한 변수 -> 잠금 해제가 되어야 문 열 수 있음
+            
 
         } else if(transform.name.Equals("Key_RedRoom") && other.gameObject.name.Equals("RedKeypad"))   // 키가 빨간색이고 키패드의 태그가 빨간방이면 문 열 수 있음
         {
@@ -55,6 +56,7 @@ public class DoorCtrl : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);      // 1초 후에 문 열리는 효과음 재생 & 문 열림
 
+        gameObject.SetActive(false);        // 카드 사용하면 없어짐
         door_audio.Play();      // 문 열리는 효과음 재생
         door.transform.DORotate(new Vector3(-90.0f, 0.0f, 104.0f), 2.5f).SetEase(Ease.InQuad);  // 감옥 문 열리는 애니메이션
         door_open = false;      
