@@ -35,12 +35,12 @@ public class DownMannequin : MonoBehaviour
         transform.LookAt(ptPos);
 
 
-        if(FTU.Instance.BPMEvent >= 1 && !sEvent1)//BPM Level (Singleton Instance) 
+        if(FTU.Instance.BPMEvent == 1 && !sEvent1)//BPM Level (Singleton Instance) 
         {
             Mannequin(1);
             StartCoroutine(changeTFforEvent1());
         }
-        else if (FTU.Instance.BPMEvent >= 2 && !sEvent2)
+        else if (FTU.Instance.BPMEvent == 2 && !sEvent2)
         {
             Mannequin(1.5f);
             StartCoroutine(changeTFforEvent2());

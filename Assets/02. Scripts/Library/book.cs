@@ -55,7 +55,7 @@ public class book : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (FTU.Instance.BPMEvent >= 1 && !sEvent1)//어떠한 심박수에 도달한다면 FTU.Instance.BPMEvent >= 2
+        if (FTU.Instance.BPMEvent == 1 && !sEvent1)//어떠한 심박수에 도달한다면 FTU.Instance.BPMEvent >= 2
         {
             Debug.Log("work");
             sEvent1 = true;
