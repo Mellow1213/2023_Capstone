@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1db58fa6-dd38-4712-9332-597a6543c734" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01. Scenes/Debugging_Map.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scenes/Debugging_Map.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asset/Elevator/BrossLab/Simple Elevator/Animation/Ascensor prueba 1.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset/Elevator/BrossLab/Simple Elevator/Animation/Ascensor prueba 1.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01. Scenes/Library.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scenes/Library.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02. Scripts/Library/DownMannequin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Scripts/Library/DownMannequin.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +15,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/02. Scripts/BPM/BpmManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/02. Scripts/BPMEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/02. Scripts/DoorRotate_Temp.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/02. Scripts/Library/FindMemo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/02. Scripts/Library/drop_sound.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ElevatorDoor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../My project (3)/Assets/DemoArduino.cs" root0="SKIP_HIGHLIGHTING" />

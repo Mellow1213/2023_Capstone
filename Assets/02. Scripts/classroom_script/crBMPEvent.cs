@@ -32,7 +32,7 @@ public class crBMPEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(FTU.Instance.BPMEvent >= level)
+        if(FTU.Instance.BPMEvent == level)
         {//Input.GetKeyDown(KeyCode.L)
             RenderSettings.skybox = classRoomskyChange;
             StartCoroutine(changeColor());

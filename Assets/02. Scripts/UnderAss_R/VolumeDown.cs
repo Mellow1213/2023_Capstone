@@ -22,13 +22,13 @@ public class VolumeDown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (FTU.Instance.BPMEvent >= 1 && !sEvent1)//어떠한 심박수에 도달한다면
+        if (FTU.Instance.BPMEvent == 1 && !sEvent1)//어떠한 심박수에 도달한다면
         {
             StartCoroutine(event1Sound());
             sEvent1 = true;
             StartCoroutine(changeTFforEvent1());
         }
-        else if (FTU.Instance.BPMEvent >= 3 && !sEvent3)//어떠한 심박수에 도달한다면
+        else if (FTU.Instance.BPMEvent == 3 && !sEvent3)//어떠한 심박수에 도달한다면
         {
             StartCoroutine(event2Sound());
             sEvent3 = true;
