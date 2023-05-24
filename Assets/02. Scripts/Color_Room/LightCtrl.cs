@@ -20,7 +20,7 @@ public class LightCtrl : MonoBehaviour
         point_lights = GameObject.FindGameObjectsWithTag("PointLight");     // 태그가 PointLight 인 자식들 배열에 넣음
 
         spot_currentIntensity = spot_lights[0].GetComponent<Light>().intensity;     // spot light의 현재 intensity 저장
-        spot_targetIntensity = Random.Range(0.0f, 50.0f);                           // spot light의 타겟 intensity는 0~50중 랜덤으로 저장
+        spot_targetIntensity = Random.Range(0.0f, 10.0f);                           // spot light의 타겟 intensity는 0~50중 랜덤으로 저장
 
 
         point_currentIntensity = point_lights[0].GetComponent<Light>().intensity;       // point light의 현재 intensity 저장
@@ -60,7 +60,7 @@ public class LightCtrl : MonoBehaviour
             }
             else
             {
-                spot_targetIntensity = Random.Range(0.0f, 50.0f);                       // spot light의 타겟 intensity는 0~50중 랜덤으로 저장
+                spot_targetIntensity = Random.Range(0.0f, 10.0f);                       // spot light의 타겟 intensity는 0~50중 랜덤으로 저장
             }
             
         } // light 어두워지는 스크립트 -> 심박수 이벤트 2단계
@@ -69,12 +69,14 @@ public class LightCtrl : MonoBehaviour
         {
             foreach(GameObject light in spot_lights)    
             {
-                light.GetComponent<Light>().intensity = 10;   // spot light의 intensity 10으로 변경 -> 어두워짐
+                light.GetComponent<Light>().intensity = 5;   // spot light의 intensity 10으로 변경 -> 어두워짐
+                light.GetComponent<Light>().color = Color.red;
             }
 
             foreach (GameObject light in point_lights)
             {
-                light.GetComponent<Light>().intensity = 0.1f;           // point light의 intensity 0.1으로 변경 -> 어두워짐
+                light.GetComponent<Light>().intensity = 0.03f;           // point light의 intensity 0.1으로 변경 -> 어두워짐
+                light.GetComponent<Light>().color = Color.red;
             }
         }
 

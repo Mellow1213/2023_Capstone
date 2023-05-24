@@ -24,7 +24,7 @@ public class BPMEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bpm = float.Parse(FTU.Instance.GetBpmValues(0));
+        //bpm = float.Parse(FTU.Instance.GetBpmValues(0));
         BPMLevel();   
     }
 
