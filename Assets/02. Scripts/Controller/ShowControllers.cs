@@ -6,7 +6,7 @@ using Valve.VR.InteractionSystem;
 
 public class ShowControllers : MonoBehaviour
 {
-    public bool showController = false;
+    public bool showController = false; // 컨트롤러를 표시할지 여부를 설정하는 변수
     
     void Update()
     {
@@ -14,11 +14,11 @@ public class ShowControllers : MonoBehaviour
         {
             if (showController)
             {
-                hand.ShowController();
+                hand.ShowController(); // 컨트롤러를 표시하는 함수 호출
             }
             else
             {
-                hand.HideController();
+                hand.HideController(); // 컨트롤러를 숨기는 함수 호출
             }
         }
         
