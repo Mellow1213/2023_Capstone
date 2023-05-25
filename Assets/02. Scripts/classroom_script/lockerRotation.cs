@@ -6,64 +6,71 @@ using Debug = UnityEngine.Debug;
 
 public class lockerRotation : MonoBehaviour
 {
-    //Angular Velocity
-    Quaternion previousRotation;
-    Vector3 angularVelocity;
-    Vector3 speed;
+    private Quaternion previousRotation;// 이전 회전 값을 저장하는 Quaternion 변수
+    private float gauge = 0.0f; // 기본 게이지
+    public float adjustmentValue = 0.007f; // 게이지 조정 값
 
-    private float Gauge = 0.0f; //기본 게이지
-    private float adjustmentValue = 0.007f; //게이지 조정 값
-    private Quaternion pastRotation, currentRotation; //이전회전값, 현재회전값
-
-    public Vector3 GetPedestrianAngularVelocity()//Angular Velocity 블로그에서 받아옴
+    private void Start()
     {
-        Quaternion deltaRotation = this.transform.rotation * Quaternion.Inverse(previousRotation);
-
-        previousRotation = this.transform.rotation;
-
-        deltaRotation.ToAngleAxis(out var angle, out var axis);
-
-        angle *= Mathf.Deg2Rad;
-
-        angularVelocity = (1.0f / Time.deltaTime) * angle * axis;
-
-        return angularVelocity;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        pastRotation = this.transform.rotation; //초기 상태의 회전값 저장
+        previousRotation = transform.rotation; // 초기 상태의 회전값 저장
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        currentRotation = this.transform.rotation; //움직이는 회전값 저장
-        if(currentRotation != pastRotation)
+        Quaternion currentRotation = transform.rotation; // 움직이는 회전값 저장
+
+        if (HasRotationChanged(currentRotation))
         {
-            StartCoroutine(curRotation());
+            UpdateGauge();
         }
         else
         {
-            Gauge = 0.0f; //움직이지 않았다면 게이지 0
+            gauge = 0.0f; // 움직이지 않았다면 게이지 0
         }
     }
 
-    IEnumerator curRotation()
+    private bool HasRotationChanged(Quaternion currentRotation)
+    //Quaternion.Angle 메서드를 사용하여 회전 값의 변경 여부를 판단
+    //일정한 각도 이상으로 회전되었는지 확인하여 불필요한 게이지 업데이트를 방지
     {
-        speed = GetPedestrianAngularVelocity();
-        Gauge += adjustmentValue * speed.magnitude; //Gauge를 조절하려면 앞에 
-        //Debug.Log("Gauge : " + Gauge); //Gauge값 출력
-        if (Gauge > 0.6f)
+        return Quaternion.Angle(currentRotation, previousRotation) > 0.01f;
+    }
+
+    private void UpdateGauge()
+    {
+        Vector3 speed = GetAngularVelocity();
+        gauge += adjustmentValue * speed.magnitude; //Gauge를 조절하려면 adjustmentValue 조정
+
+        if (gauge > 0.5f)
         {
-            LockerOpenSound.instance.PlayOpenSound();//발생 시킬 이벤트
-            DoorEvent.instance.DoorEventFunc();//발생 시킬 이벤트
-            StartCoroutine(Security.instance.activeSecuity());//발생 시킬 이벤트
-            Gauge = 0.0f; // 다시 게이지 0으로 변경
-            //Debug.Log("run_A"); //실행 확인
+            TriggerEvents();//일정 게이지 값 이상이 되면 여러 이벤트를 실행
+            gauge = 0.0f;
         }
 
-        yield return new WaitForSeconds(2); //2초 뒤 속도 조정, 연속적으로 Gauge값이 차는 것을 방지
-        pastRotation = currentRotation;
+        StartCoroutine(ResetRotation()); //게이지 업데이트 후 회전 값을 재설정하는 코루틴을 시작
+    }
+
+    private Vector3 GetAngularVelocity()
+    {
+        Quaternion deltaRotation = transform.rotation * Quaternion.Inverse(previousRotation);
+        previousRotation = transform.rotation;
+
+        deltaRotation.ToAngleAxis(out float angle, out Vector3 axis);
+        angle *= Mathf.Deg2Rad;
+
+        return (1.0f / Time.deltaTime) * angle * axis;
+    }
+
+    private IEnumerator ResetRotation()
+    {
+        yield return new WaitForSeconds(2); //회전 값을 재설정
+        previousRotation = transform.rotation; //2초 뒤 속도 조정, 연속적으로 Gauge값이 차는 것을 방지
+    }
+
+    private void TriggerEvents()
+    {
+        LockerOpenSound.instance.PlayOpenSound();//발생 시킬 이벤트
+        DoorEvent.instance.DoorEventFunc();//발생 시킬 이벤트
+        StartCoroutine(Security.instance.activeSecuity());//발생 시킬 이벤트
     }
 }

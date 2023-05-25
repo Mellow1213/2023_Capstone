@@ -4,29 +4,29 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 
-public class lockerOpen : MonoBehaviour
+public class lockerOpen : MonoBehaviour // ì‚¬ìš© ì•ˆí•˜ëŠ” ìŠ¤í¬ë¦½íŠ¸
 {
-    //»ç¹°ÇÔ ¿©´Â ¼Óµµ¿¡ µû¶ó¼­ ¼Ò¸® »çÀÌÁî º¯°æµÇ´Â script
-    //ÀÏÁ¤ ¼Óµµ(¼Ò¸® Å©±â)¸¦ ³ÑÀ¸¸é °æºñ°¡ ¹®µÎµé±è.
+    //ì‚¬ë¬¼í•¨ ì—¬ëŠ” ì†ë„ì— ë”°ë¼ì„œ ì†Œë¦¬ ì‚¬ì´ì¦ˆ ë³€ê²½ë˜ëŠ” script
+    //ì¼ì • ì†ë„(ì†Œë¦¬ í¬ê¸°)ë¥¼ ë„˜ìœ¼ë©´ ê²½ë¹„ê°€ ë¬¸ë‘ë“¤ê¹€.
     private bool isTriggered = false;
     private bool isTriggered2 = false;
     private float GaugeTimer;
     
     private float Gauge = 0.3f;
 
-    public GameObject ob;//¿ø·¡´Â hitÀ» »ç¿ëÇØ¼­ ´ê´Â object¸¦ °¨ÁöÇß´Âµ¥, ¹ø°Å·Î¿ö¼­ Å×½ºÆ®¿ëÀ¸·Î ¿òÁ÷ÀÏ »ç¹°ÇÔ ¹®À» ÀÓÀÇ·Î ¼³Á¤ÇÔ.
+    public GameObject ob;//ì›ë˜ëŠ” hitì„ ì‚¬ìš©í•´ì„œ ë‹¿ëŠ” objectë¥¼ ê°ì§€í–ˆëŠ”ë°, ë²ˆê±°ë¡œì›Œì„œ í…ŒìŠ¤íŠ¸ìš©ìœ¼ë¡œ ì›€ì§ì¼ ì‚¬ë¬¼í•¨ ë¬¸ì„ ì„ì˜ë¡œ ì„¤ì •í•¨.
 
     public AudioClip doorSound;
     private AudioSource audioSource;
 
-    //Angular Velocity, ºí·Î±× Âü°í
-    Quaternion previousRotation; //Àü ÇÁ·¹ÀÓÀÇ ·ÎÅ×ÀÌ¼Ç °ª
-    Vector3 angularVelocity; //°¢¼Óµµ¸¦ °ü¸®ÇÒ º¯¼ö
+    //Angular Velocity, ë¸”ë¡œê·¸ ì°¸ê³ 
+    Quaternion previousRotation; //ì „ í”„ë ˆì„ì˜ ë¡œí…Œì´ì…˜ ê°’
+    Vector3 angularVelocity; //ê°ì†ë„ë¥¼ ê´€ë¦¬í•  ë³€ìˆ˜
     Vector3 speed;
 
     public bool DoorEventTrue = false;
 
-    public Vector3 GetPedestrianAngularVelocity()//°¢ ¼Óµµ¸¦ ±¸ÇÏ´Â ÇÔ¼ö
+    public Vector3 GetPedestrianAngularVelocity()//ê° ì†ë„ë¥¼ êµ¬í•˜ëŠ” í•¨ìˆ˜
     {
         Quaternion deltaRotation = ob.transform.rotation * Quaternion.Inverse(previousRotation);
 
@@ -34,12 +34,12 @@ public class lockerOpen : MonoBehaviour
 
         deltaRotation.ToAngleAxis(out var angle, out var axis);
 
-        //°¢µµ¿¡¼­ ¶óµğ¾ÈÀ¸·Î º¯È¯
+        //ê°ë„ì—ì„œ ë¼ë””ì•ˆìœ¼ë¡œ ë³€í™˜
         angle *= Mathf.Deg2Rad;
 
         angularVelocity = (1.0f / Time.deltaTime) * angle * axis;
 
-        //°¢¼Óµµ ¹İÈ¯
+        //ê°ì†ë„ ë°˜í™˜
         return angularVelocity;
     }
     // Start is called before the first frame update
@@ -53,17 +53,17 @@ public class lockerOpen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isTriggered = Input.GetMouseButton(0);//¹® ¿­±â À§ÇØ¼­ ÀÓ½Ã·Î »ç¿ë
-        isTriggered2 = Input.GetMouseButton(1);//¹®À» ´İ±â À§ÇØ¼­ ÀÓ½Ã·Î »ç¿ë
+        isTriggered = Input.GetMouseButton(0);//ë¬¸ ì—´ê¸° ìœ„í•´ì„œ ì„ì‹œë¡œ ì‚¬ìš©
+        isTriggered2 = Input.GetMouseButton(1);//ë¬¸ì„ ë‹«ê¸° ìœ„í•´ì„œ ì„ì‹œë¡œ ì‚¬ìš©
         //audioSource.Play();
 
         if (isTriggered || isTriggered2)
         {
             speed = GetPedestrianAngularVelocity();
-            Gauge += Time.deltaTime * speed.magnitude; //°¢¼Óµµ°¡ °ğ »ç¿îµå(¼ÒÀ½) Å©±â
+            Gauge += Time.deltaTime * speed.magnitude; //ê°ì†ë„ê°€ ê³§ ì‚¬ìš´ë“œ(ì†ŒìŒ) í¬ê¸°
             if(Gauge > 0.7)
             {
-                //¹®µÎµé±â´Â ¼Ò¸®, ¾Ö´Ï¸ŞÀÌ¼Ç ½ÇÇà
+                //ë¬¸ë‘ë“¤ê¸°ëŠ” ì†Œë¦¬, ì• ë‹ˆë©”ì´ì…˜ ì‹¤í–‰
                 DoorEventTrue = true;
                 Gauge = 0.3f;
             }
@@ -75,7 +75,7 @@ public class lockerOpen : MonoBehaviour
 
         if (isTriggered)
         {
-            GaugeTimer = -1 * Time.deltaTime * 20;//¿©±â¿¡ Èû °öÇÏ±â
+            GaugeTimer = -1 * Time.deltaTime * 20;//ì—¬ê¸°ì— í˜ ê³±í•˜ê¸°
             audioSource.volume = Gauge;
             if (ob.transform.eulerAngles.y >= 170) ob.transform.Rotate(0, GaugeTimer, 0);
             //Debug.Log("ob.transform.rotation.y = " + ob.transform.rotation.y);
@@ -83,7 +83,7 @@ public class lockerOpen : MonoBehaviour
         }
         else if (isTriggered2)
         {
-            GaugeTimer = Time.deltaTime * 20;//¿©±â¿¡ Èû °öÇÏ±â
+            GaugeTimer = Time.deltaTime * 20;//ì—¬ê¸°ì— í˜ ê³±í•˜ê¸°
             ob.transform.Rotate(0, GaugeTimer, 0);
             Debug.Log("Close");
             audioSource.volume = Gauge;
