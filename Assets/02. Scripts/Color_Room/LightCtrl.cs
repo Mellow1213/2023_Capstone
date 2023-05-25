@@ -67,30 +67,52 @@ public class LightCtrl : MonoBehaviour
 
         else if (FTU.Instance.BPMEvent == 2)
         {
+            int spot_index = 0;         // 복도 조명만 제어하기 위한 인덱스
             foreach (GameObject light in spot_lights)
             {
                 light.GetComponent<Light>().intensity = 5;   // spot light의 intensity 10으로 변경 -> 어두워짐
-                light.GetComponent<Light>().color = Color.red;      // 불빛 색상 빨간색으로 변경
+
+                if(spot_index < 13)
+                {
+                    light.GetComponent<Light>().color = Color.red;      // 불빛 색상 빨간색으로 변경
+                    spot_index++;
+                }
             }
 
+            int point_index = 0;        // 복도 조명만 제어하기 위한 인덱스
             foreach (GameObject light in point_lights)
             {
                 light.GetComponent<Light>().intensity = 0.03f;           // point light의 intensity 0.1으로 변경 -> 어두워짐
-                light.GetComponent<Light>().color = Color.red;            // 불빛 색상 빨간색으로 변경
+                if (point_index < 13)       // 복도 조명만 빨간색으로 변경
+                {
+                    light.GetComponent<Light>().color = Color.red;      // 불빛 색상 빨간색으로 변경
+                    point_index++;
+                }
             }
         }
         else if (FTU.Instance.BPMEvent == 0)
         {
+            int spot_index = 0;     // 복도 조명만 제어하기 위한 인덱스
+
             foreach (GameObject light in spot_lights)
             {
                 light.GetComponent<Light>().intensity = 50.0f;   // spot light의 intensity 원래 상태로
-                light.GetComponent<Light>().color = Color.white;    // 불빛 색상 흰색으로 변경
+                if (spot_index < 13)        // 복도 조명만 흰색으로 변경
+                {
+                    light.GetComponent<Light>().color = Color.white;      // 불빛 색상 흰색으로 변경
+                    spot_index++;
+                }
             }
 
+            int point_index = 0;        // 복도 조명만 제어하기 위한 인덱스
             foreach (GameObject light in point_lights)
             {
                 light.GetComponent<Light>().intensity = 1.0f;           // point light의 intensity 원래 상태로
-                light.GetComponent<Light>().color = Color.white;        // 불빛 색상 흰색으로 변경
+                if (point_index < 13)       // 복도 조명만 흰색으로 변경
+                {
+                    light.GetComponent<Light>().color = Color.white;      // 불빛 색상 흰색으로 변경
+                    point_index++;
+                }
             }
 
         }
