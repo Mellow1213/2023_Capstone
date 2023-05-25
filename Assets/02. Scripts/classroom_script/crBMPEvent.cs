@@ -26,7 +26,7 @@ public class crBMPEvent : MonoBehaviour
         }
         RenderSettings.skybox = classRoomsky;
         sizeUpBlood.SetActive(false); 
-        Invoke("bloodOn", 100f);
+        Invoke("bloodOn", 60f);
     }
 
     // Update is called once per frame
