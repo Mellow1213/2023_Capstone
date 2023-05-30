@@ -4,6 +4,7 @@
 //
 //=============================================================================
 
+using System;
 using UnityEngine;
 using System.Collections;
 
@@ -15,14 +16,19 @@ namespace Valve.VR.InteractionSystem
 	{
 		public float speed = 4.0f;
 		public float shiftSpeed = 16.0f;
-		public bool showInstructions = true;
+		public bool showInstructions = false;
 
 		private Vector3 startEulerAngles;
 		private Vector3 startMousePosition;
 		private float realTime;
 
 		//-------------------------------------------------
-		void OnEnable()
+        private void Start()
+        {
+            Cursor.visible = false;
+        }
+
+        void OnEnable()
 		{
 			realTime = Time.realtimeSinceStartup;
 		}
