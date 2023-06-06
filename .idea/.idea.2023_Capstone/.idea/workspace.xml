@@ -3,10 +3,50 @@
   <component name="ChangeListManager">
     <list default="true" id="1db58fa6-dd38-4712-9332-597a6543c734" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2023_Capstone/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01. Scenes/underass.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scenes/underass.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Core/Materials/FallbackHandIndicator.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Core/Materials/FallbackHandIndicator.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Core/Scripts/FallbackCameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Core/Scripts/FallbackCameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01. Scenes/antique.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scenes/antique.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/bark01_bottom.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/bark01_bottom.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/bark01_bottom.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/bark01_bottom.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/dirt01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/dirt01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/dirt01.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/dirt01.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/grass01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/grass01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/grass01.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/grass01.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/grassmesh.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/grassmesh.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/grassmesh.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/grassmesh.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/skyMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/skyMaterial.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/skyMaterial.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/skyMaterial.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/tree_branches.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/tree_branches.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/tree_branches.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Materials/tree_branches.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Meshes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Meshes.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Meshes/Prefabs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Meshes/Prefabs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Meshes/Prefabs/grass01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Meshes/Prefabs/grass01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Meshes/Prefabs/grass01.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Meshes/Prefabs/grass01.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Meshes/Prefabs/tree_1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Meshes/Prefabs/tree_1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Meshes/Prefabs/tree_1.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Meshes/Prefabs/tree_1.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Meshes/Source.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Meshes/Source.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Meshes/Source/grass01.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Meshes/Source/grass01.FBX.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Meshes/Source/tree_1.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Meshes/Source/tree_1.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/PostProcessing Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/PostProcessing Profile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/PostProcessing Profile.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/PostProcessing Profile.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Scenes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Scenes.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Scenes/New Terrain.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Scenes/New Terrain.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Scenes/New Terrain.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Scenes/New Terrain.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Scenes/assets.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Scenes/assets.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Scenes/assets.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Scenes/assets.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Scenes/demoScene_free.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Scenes/demoScene_free.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Scenes/demoScene_free.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Scenes/demoScene_free.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Scenes/demoScene_freeSettings.lighting" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Scenes/demoScene_freeSettings.lighting" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Scenes/demoScene_freeSettings.lighting.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Scenes/demoScene_freeSettings.lighting.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/StandardNoCulling.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/StandardNoCulling.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/StandardNoCulling.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/StandardNoCulling.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Textures.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Textures.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Textures/bark01_bottom.tga.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Textures/bark01_bottom.tga.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Textures/dirt01.tga.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Textures/dirt01.tga.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Textures/grass01.tga.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Textures/grass01.tga.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Textures/grass01_b.tga.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Textures/grass01_b.tga.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Textures/grassmesh.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Textures/grassmesh.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Textures/tree_branches.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fantasy Forest Environment Free Sample/Textures/tree_branches.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/saves/test.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/saves/test.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +59,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/02. Scripts/DoorRotate_Temp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/02. Scripts/Library/FindMemo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/02. Scripts/Library/drop_sound.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ElevatorDoor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/mannequin_surprise.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../My project (3)/Assets/DemoArduino.cs" root0="SKIP_HIGHLIGHTING" />
@@ -114,7 +155,7 @@
       <workItem from="1684819307390" duration="390000" />
       <workItem from="1684992766917" duration="5650000" />
       <workItem from="1685104621555" duration="652000" />
-      <workItem from="1685442291382" duration="1266000" />
+      <workItem from="1685442291382" duration="3289000" />
     </task>
     <servers />
   </component>
