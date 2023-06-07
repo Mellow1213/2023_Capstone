@@ -37,7 +37,8 @@ public class crBMPEvent : MonoBehaviour
 
     void Update()
     {
-        if (FTU.Instance.BPMEvent == 1 && level < 5 && !sEvent1)   // FTU.Instance.BPMEvent 값이 1이고 이 이벤트는 다섯번 실행 가능
+        if (Input.GetKeyDown(KeyCode.P) && level < 5 && !sEvent1)   // FTU.Instance.BPMEvent 값이 1이고 이 이벤트는 다섯번 실행 가능
+                                                                   //if (FTU.Instance.BPMEvent == 1 && level < 5 && !sEvent1)   
         {
             sEvent1 = true; // 이벤트 무한 반복 방지
             RenderSettings.skybox = classRoomskyChange;   // 스카이박스 변경
