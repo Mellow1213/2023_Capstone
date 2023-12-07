@@ -11,7 +11,7 @@
 
 <br><br>
 
-## HearRate
+## HeartRate
 
 ### - Android Studio로 제작한 심박수 측정 앱
 ### https://github.com/lbd0/HeartRate_WatchApp
